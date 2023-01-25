@@ -1,0 +1,802 @@
+
+version: "3.1"
+stories:
+- story: Basic test story Giulia
+  steps:
+  - user: |
+      hello
+    intent: welcome_greet
+  - action: utter_welcome_greet
+  - user: |
+      I want a suggestion for a good kpop song
+    intent: request_song_suggestion_form
+  - action: action_set_song_slots
+  - action: song_suggestion_form
+  - active_loop: song_suggestion_form
+  - slot_was_set:
+    - requested_slot: group
+#  - user: |
+#      let's say [twice](group)
+#    intent: inform_group
+  - slot_was_set:
+    - group: twice
+  - slot_was_set:
+    - group: null
+  - slot_was_set:
+    - requested_slot: group
+  - user: |
+      what groups can I ask 
+    intent: request_list_groups
+  - action: utter_list_groups
+  - slot_was_set:
+    - requested_slot: group
+#  - user: |
+#      let's do [BTS](group) then 
+#    intent: inform_group
+  - slot_was_set:
+    - group: BTS
+  - slot_was_set:
+    - requested_slot: random_song
+#  - user: |
+#      yes, let's make it [happy]{"entity": "song_valence", "value": "high cheerfulness"} and [calm]{"entity": "song_energy", "value": "low energy"}
+#    intent: inform_song
+  - slot_was_set:
+    - random_song: false
+  - slot_was_set:
+    - random_song: false
+  - slot_was_set:
+    - song_valence: high
+  - slot_was_set:
+    - song_energy: low
+  - slot_was_set:
+    - song_danceability: null
+  - slot_was_set:
+    - requested_slot: song_danceability
+#  - user: |
+#      it's the same
+#    intent: response_neutral
+  - slot_was_set:
+    - song_danceability: all
+  - slot_was_set:
+    - song_danceability: all
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_submit
+  - action: action_suggest_song
+  - slot_was_set:
+    - group: BTS
+  - user: |
+      no but who are [exo]{"entity": "group", "value": "EXO"}
+    intent: group_info_general
+  - slot_was_set:
+    - group: EXO
+  - action: action_fill_info_slots
+  - slot_was_set:
+    - group_debut: '2012'
+  - slot_was_set:
+    - group_members: '9'
+  - slot_was_set:
+    - group_company: SM
+  - slot_was_set:
+    - group_activity: active
+  - action: utter_group_info_general
+  - user: |
+      no thanks bye
+    intent: goodbye
+  - action: utter_ending
+
+- story: Basic test story Paola
+  steps:
+  - intent: welcome_greet
+    user: |
+      hi
+  - action: utter_welcome_greet
+  - intent: out_of_scope
+    user: |
+      do you speak italian?
+  - action: utter_out_of_scope
+  - intent: request_song_suggestion_form
+    user: |
+      suggest me a song
+  - action: action_set_song_slots
+  - action: song_suggestion_form
+  - active_loop: song_suggestion_form
+  - slot_was_set:
+    - requested_slot: group
+#  - intent: inform_group
+#    user: |
+#      [britney spears](group)
+  - slot_was_set:
+    - group: britney spears
+  - slot_was_set:
+    - group: null
+  - slot_was_set:
+    - requested_slot: group
+  - intent: request_list_groups
+    user: |
+      list the groups
+  - action: utter_list_groups
+  - action: song_suggestion_form
+  - slot_was_set:
+    - requested_slot: group
+  - intent: stop
+    user: |
+      no I want to stop
+  - action: utter_ask_continue
+  - intent: response_positive
+    user: |
+      yes 
+  - action: action_deactivate_loop
+  - active_loop: null
+  - action: utter_suggest_tasks
+  - intent: goodbye
+    user: |
+      no bye
+  - action: utter_ending
+
+
+- story: Test story Eva
+  steps:
+  - intent: welcome_greet
+    user: |
+      Hi
+  - action: utter_welcome_greet
+  - intent: general_info_kpop
+    user: |
+      Can you tell me something about k pop?
+  - action: utter_general_info_kpop
+  - intent: group_info_general
+    user: |
+      Who are [blackpink]{"entity": "group", "value": "Blackpink"}?
+  - slot_was_set:
+    - group: Blackpink
+  - action: action_fill_info_slots
+  - slot_was_set:
+    - group_debut: '2016'
+  - slot_was_set:
+    - group_members: '4'
+  - slot_was_set:
+    - group_company: YG
+  - slot_was_set:
+    - group_activity: active
+  - action: utter_group_info_general
+  - intent: request_group_info_form
+    user: |
+      Can you tell me something about [bts]{"entity": "group", "value": "BTS"}
+  - slot_was_set:
+    - group: BTS
+  - action: group_info_form
+  - active_loop: group_info_form
+  - slot_was_set:
+    - group: BTS
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_fill_info_slots
+  - slot_was_set:
+    - group_debut: '2013'
+  - slot_was_set:
+    - group_members: '7'
+  - slot_was_set:
+    - group_company: BigHit
+  - slot_was_set:
+    - group_activity: inactive
+  - action: utter_group_info_intro
+  - intent: group_info_members
+    user: |
+      Number of members
+  - action: action_fill_info_slots
+  - slot_was_set:
+    - group_debut: '2013'
+  - slot_was_set:
+    - group_members: '7'
+  - slot_was_set:
+    - group_company: BigHit
+  - slot_was_set:
+    - group_activity: inactive
+  - action: utter_group_info_members
+  - intent: group_info_unknown
+    user: |
+      Who are the 7 members?
+  - action: utter_group_info_unknown
+  - intent: request_song_suggestion_form
+    user: |
+      Suggest a song now
+  - action: action_set_song_slots
+  - slot_was_set:
+    - group: null
+  - slot_was_set:
+    - random_song: null
+  - slot_was_set:
+    - song_danceability: null
+  - slot_was_set:
+    - song_energy: null
+  - slot_was_set:
+    - song_valence: null
+  - action: song_suggestion_form
+  - active_loop: song_suggestion_form
+  - slot_was_set:
+    - requested_slot: group
+#  - intent: response_negative
+#    user: |
+#      No
+  - slot_was_set:
+    - group: none
+  - slot_was_set:
+    - group: none
+  - slot_was_set:
+    - requested_slot: random_song
+#  - intent: response_positive
+#    user: |
+#      Yes
+  - slot_was_set:
+    - random_song: false
+  - slot_was_set:
+    - random_song: false
+  - slot_was_set:
+    - song_valence: null
+  - slot_was_set:
+    - song_energy: null
+  - slot_was_set:
+    - song_danceability: null
+  - slot_was_set:
+    - requested_slot: song_valence
+#  - intent: response_negative
+#    user: |
+#      Not too much
+  - slot_was_set:
+    - song_valence: low
+  - slot_was_set:
+    - song_valence: low
+  - slot_was_set:
+    - requested_slot: song_energy
+#  - intent: response_positive
+#    user: |
+#      Of course
+  - slot_was_set:
+    - song_energy: high
+  - slot_was_set:
+    - song_energy: high
+  - slot_was_set:
+    - requested_slot: song_danceability
+#  - intent: response_positive
+#    user: |
+#      Yes
+  - slot_was_set:
+    - song_danceability: high
+  - slot_was_set:
+    - song_danceability: high
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_submit
+  - action: action_suggest_song
+  - intent: response_negative
+    user: |
+      no
+  - action: utter_suggest_tasks
+  - intent: goodbye
+    user: |
+      no bye
+  - action: utter_ending
+
+
+- story: Test story Noemi
+  steps:
+  - intent: welcome_greet
+    user: |
+      Hi
+  - action: utter_welcome_greet
+  - intent: request_song_suggestion_form
+    user: |
+      I want a song suggestion
+  - action: action_set_song_slots
+  - slot_was_set:
+    - group: null
+  - slot_was_set:
+    - random_song: null
+  - slot_was_set:
+    - song_danceability: null
+  - slot_was_set:
+    - song_energy: null
+  - slot_was_set:
+    - song_valence: null
+  - action: song_suggestion_form
+  - active_loop: song_suggestion_form
+  - slot_was_set:
+    - requested_slot: group
+#  - user: |
+#      [Stray Kids](group)
+#    intent: inform_group
+  - slot_was_set:
+    - group: Stray Kids
+  - slot_was_set:
+    - group: Stray Kids
+  - slot_was_set:
+    - requested_slot: random_song
+#  - intent: response_positive
+#    user: |
+#      Yes
+  - slot_was_set:
+    - random_song: false
+  - slot_was_set:
+    - random_song: false
+  - slot_was_set:
+    - song_valence: null
+  - slot_was_set:
+    - song_energy: null
+  - slot_was_set:
+    - song_danceability: null
+  - slot_was_set:
+    - requested_slot: song_valence
+#  - intent: response_neutral
+#    user: |
+#      Random
+  - slot_was_set:
+    - song_valence: all
+  - slot_was_set:
+    - song_valence: all
+  - slot_was_set:
+    - requested_slot: song_energy
+#  - intent: response_positive
+#    user: |
+#      Yes
+  - slot_was_set:
+    - song_energy: high
+  - slot_was_set:
+    - song_energy: high
+  - slot_was_set:
+    - requested_slot: song_danceability
+#  - intent: response_negative
+#    user: |
+#      Not
+  - slot_was_set:
+    - song_danceability: low
+  - slot_was_set:
+    - song_danceability: low
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_submit
+  - action: action_suggest_song
+  - slot_was_set:
+    - group: Stray Kids
+  - intent: response_positive
+    user: |
+      Yes tell me more
+  - action: group_info_form
+  - active_loop: group_info_form
+  - slot_was_set:
+    - group: Stray Kids
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_fill_info_slots
+  - slot_was_set:
+    - group_debut: '2018'
+  - slot_was_set:
+    - group_members: '8'
+  - slot_was_set:
+    - group_company: JYPE
+  - slot_was_set:
+    - group_activity: active
+  - action: utter_group_info_intro
+  - intent: group_info_members
+    user: |
+      Number of members
+  - action: action_fill_info_slots
+  - slot_was_set:
+    - group_debut: '2018'
+  - slot_was_set:
+    - group_members: '8'
+  - slot_was_set:
+    - group_company: JYPE
+  - slot_was_set:
+    - group_activity: active
+  - action: utter_group_info_members
+  - intent: response_positive
+    user: |
+      Ok
+  - action: utter_suggest_tasks
+  - intent: response_positive
+    user: |
+      Yes
+  - action: action_fill_info_slots
+  - slot_was_set:
+    - group_debut: '2018'
+  - slot_was_set:
+    - group_members: '8'
+  - slot_was_set:
+    - group_company: JYPE
+  - slot_was_set:
+    - group_activity: active
+  - action: utter_group_info_intro
+  - intent: group_info_company
+    user: |
+      Is their agency jyp?
+  - action: action_fill_info_slots
+  - slot_was_set:
+    - group_debut: '2018'
+  - slot_was_set:
+    - group_members: '8'
+  - slot_was_set:
+    - group_company: JYPE
+  - slot_was_set:
+    - group_activity: active
+  - action: utter_group_info_company
+  - intent: group_info_unknown
+    user: |
+      Do you know what skz means?
+  - action: utter_group_info_unknown
+  - intent: request_song_suggestion_form
+    user: |
+      Suggest a song
+  - action: action_set_song_slots
+  - slot_was_set:
+    - group: null
+  - slot_was_set:
+    - random_song: null
+  - slot_was_set:
+    - song_danceability: null
+  - slot_was_set:
+    - song_energy: null
+  - slot_was_set:
+    - song_valence: null
+  - action: song_suggestion_form
+  - active_loop: song_suggestion_form
+  - slot_was_set:
+    - requested_slot: group
+#  - user: |
+#      [Blackpink](group)
+#    intent: inform_group
+  - slot_was_set:
+    - group: Blackpink
+  - action: song_suggestion_form
+  - slot_was_set:
+    - group: Blackpink
+  - slot_was_set:
+    - requested_slot: random_song
+#  - intent: response_positive
+#    user: |
+#      Yes
+  - slot_was_set:
+    - random_song: false
+  - slot_was_set:
+    - random_song: false
+  - slot_was_set:
+    - song_valence: null
+  - slot_was_set:
+    - song_energy: null
+  - slot_was_set:
+    - song_danceability: null
+  - slot_was_set:
+    - requested_slot: song_valence
+#  - intent: response_middle
+#    user: |
+#      Neutral
+  - slot_was_set:
+    - song_valence: medium
+  - slot_was_set:
+    - song_valence: medium
+  - slot_was_set:
+    - requested_slot: song_energy
+#  - intent: response_positive
+#    user: |
+#      Yep
+  - slot_was_set:
+    - song_energy: high
+  - slot_was_set:
+    - song_energy: high
+  - slot_was_set:
+    - requested_slot: song_danceability
+#  - intent: response_positive
+#    user: |
+#      Sure
+  - slot_was_set:
+    - song_danceability: high
+  - slot_was_set:
+    - song_danceability: high
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_submit
+  - action: action_suggest_song
+  - slot_was_set:
+    - group: Blackpink
+  - intent: response_negative
+    user: |
+      No
+  - action: utter_suggest_tasks
+  - intent: response_negative
+    user: |
+      Nope
+  - action: utter_general_info_bot
+
+- story: Test story Sara
+  steps:
+  - intent: welcome_greet
+    user: |
+      Hi
+  - action: utter_welcome_greet
+  - intent: request_song_suggestion_form
+    user: |
+      Find the perfect k-pop song for me
+  - action: action_set_song_slots
+  - slot_was_set:
+    - group: null
+  - slot_was_set:
+    - random_song: null
+  - slot_was_set:
+    - song_danceability: null
+  - slot_was_set:
+    - song_energy: null
+  - slot_was_set:
+    - song_valence: null
+  - action: song_suggestion_form
+  - active_loop: song_suggestion_form
+  - slot_was_set:
+    - requested_slot: group
+  - slot_was_set:
+    - group: none
+  - slot_was_set:
+    - group: none
+  - slot_was_set:
+    - requested_slot: random_song
+#  - intent: response_positive
+#    user: |
+#      Yes
+  - slot_was_set:
+    - random_song: false
+  - slot_was_set:
+    - random_song: false
+  - slot_was_set:
+    - song_valence: null
+  - slot_was_set:
+    - song_energy: null
+  - slot_was_set:
+    - song_danceability: null
+  - slot_was_set:
+    - requested_slot: song_valence
+#  - intent: response_positive
+#    user: |
+#      Yes
+  - slot_was_set:
+    - song_valence: high
+  - slot_was_set:
+    - song_valence: high
+  - slot_was_set:
+    - requested_slot: song_energy
+#  - intent: response_negative
+#    user: |
+#      No
+  - slot_was_set:
+    - song_energy: low
+  - slot_was_set:
+    - song_energy: low
+  - slot_was_set:
+    - requested_slot: song_danceability
+#  - intent: response_positive
+#    user: |
+#      Yes
+  - slot_was_set:
+    - song_danceability: high
+  - slot_was_set:
+    - song_danceability: high
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_submit
+  - action: action_suggest_song
+  - slot_was_set:
+    - group: EXO
+  - intent: response_positive
+    user: |
+      Sure
+  - action: group_info_form
+  - active_loop: group_info_form
+  - slot_was_set:
+    - group: EXO
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_fill_info_slots
+  - slot_was_set:
+    - group_debut: '2012'
+  - slot_was_set:
+    - group_members: '9'
+  - slot_was_set:
+    - group_company: SM
+  - slot_was_set:
+    - group_activity: active
+  - action: utter_group_info_intro
+  - intent: group_info_general
+    user: |
+      Everything
+  - action: action_fill_info_slots
+  - slot_was_set:
+    - group_debut: '2012'
+  - slot_was_set:
+    - group_members: '9'
+  - slot_was_set:
+    - group_company: SM
+  - slot_was_set:
+    - group_activity: active
+  - action: utter_group_info_general
+#  - intent: response_positive
+#    user: |
+#      Nice
+
+
+- story: Test story Irene
+  steps:
+  - intent: welcome_greet
+    user: |
+      Hi
+  - action: utter_welcome_greet
+  - intent: general_info_bot
+    user: |
+      What can I ask?
+  - action: utter_general_info_bot
+  - intent: request_song_suggestion_form
+    user: |
+      Suggest me a song
+  - action: action_set_song_slots
+  - slot_was_set:
+    - group: null
+  - slot_was_set:
+    - random_song: null
+  - slot_was_set:
+    - song_danceability: null
+  - slot_was_set:
+    - song_energy: null
+  - slot_was_set:
+    - song_valence: null
+  - action: song_suggestion_form
+  - active_loop: song_suggestion_form
+  - slot_was_set:
+    - requested_slot: group
+#  - intent: response_negative
+#    user: |
+#      No
+  - slot_was_set:
+    - group: none
+  - slot_was_set:
+    - group: none
+  - slot_was_set:
+    - requested_slot: random_song
+#  - intent: response_positive
+#    user: |
+#      Yes
+  - slot_was_set:
+    - random_song: false
+  - slot_was_set:
+    - random_song: false
+  - slot_was_set:
+    - song_valence: null
+  - slot_was_set:
+    - song_energy: null
+  - slot_was_set:
+    - song_danceability: null
+  - slot_was_set:
+    - requested_slot: song_valence
+#  - intent: response_positive
+#    user: |
+#      Yes
+  - slot_was_set:
+    - song_valence: high
+  - slot_was_set:
+    - song_valence: high
+  - slot_was_set:
+    - requested_slot: song_energy
+#  - intent: response_middle
+#    user: |
+#      So and so
+  - slot_was_set:
+    - song_energy: medium
+  - slot_was_set:
+    - song_energy: medium
+  - slot_was_set:
+    - requested_slot: song_danceability
+#  - intent: response_positive
+#    user: |
+#      Yes
+  - slot_was_set:
+    - song_danceability: high
+  - slot_was_set:
+    - song_danceability: high
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_submit
+  - action: action_suggest_song
+  - slot_was_set:
+    - group: Stray Kids
+  - intent: response_positive
+    user: |
+      Yes
+  - action: group_info_form
+  - active_loop: group_info_form
+  - slot_was_set:
+    - group: Stray Kids
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_fill_info_slots
+  - slot_was_set:
+    - group_debut: '2018'
+  - slot_was_set:
+    - group_members: '8'
+  - slot_was_set:
+    - group_company: JYPE
+  - slot_was_set:
+    - group_activity: active
+  - action: utter_group_info_intro
+  - intent: group_info_members
+    user: |
+      Number of members
+  - action: action_fill_info_slots
+  - slot_was_set:
+    - group_debut: '2018'
+  - slot_was_set:
+    - group_members: '8'
+  - slot_was_set:
+    - group_company: JYPE
+  - slot_was_set:
+    - group_activity: active
+  - action: utter_group_info_members
+  - intent: request_song_suggestion_form
+    user: |
+      Suggest me another song of them
+  - action: action_set_song_slots
+  - slot_was_set:
+    - random_song: null
+  - slot_was_set:
+    - song_danceability: null
+  - slot_was_set:
+    - song_energy: null
+  - slot_was_set:
+    - song_valence: null
+  - action: song_suggestion_form
+  - active_loop: song_suggestion_form
+  - slot_was_set:
+    - group: Stray Kids
+  - slot_was_set:
+    - requested_slot: random_song
+#  - intent: response_negative
+#    user: |
+#      Not
+  - slot_was_set:
+    - random_song: true
+  - slot_was_set:
+    - random_song: true
+  - slot_was_set:
+    - song_valence: all
+  - slot_was_set:
+    - song_energy: all
+  - slot_was_set:
+    - song_danceability: all
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_submit
+  - action: action_suggest_song
+  - slot_was_set:
+    - group: Stray Kids
+  - intent: group_info_general
+    user: |
+      Tell me everything
+  - action: action_fill_info_slots
+  - slot_was_set:
+    - group_debut: '2018'
+  - slot_was_set:
+    - group_members: '8'
+  - slot_was_set:
+    - group_company: JYPE
+  - slot_was_set:
+    - group_activity: active
+  - action: utter_group_info_general
+  - intent: response_negative
+    user: |
+      No
+  - action: utter_suggest_tasks

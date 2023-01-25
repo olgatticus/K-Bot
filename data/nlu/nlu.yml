@@ -1,0 +1,617 @@
+version: "3.1"
+nlu:
+- intent: welcome_greet
+  examples: |
+    - just going to say hi
+    - hey
+    - hello hi
+    - Hey
+    - howdy
+    - Howdy
+    - hey there
+    - hi there
+    - Hi
+    - hi
+    - Hi there
+    - greetings
+    - long time no see
+    - hello
+    - hi?
+    - /start
+    - start
+    - ciao
+- intent: request_song_suggestion_form
+  examples: |
+    - tell me a good song by [NCT](group)
+    - Which of their songs should I listen to
+    - what song by them do you suggest
+    - tell me a good song by them
+    - I want to listen to a [cheerful]{"entity": "song_valence", "value": "high cheerfulness"} and [danceable]{"entity": "song_danceability", "value": "high danceability"} song
+    - I want to listen to a [quite cheerful]{"entity": "song_valence", "value": "high cheerfulness"} and [not too energetic]{"entity": "song_energy", "value": "low energy"} song
+    - Please suggest one [happy]{"entity": "song_valence", "value": "high cheerfulness"} and [danceable]{"entity": "song_danceability", "value": "high danceability"} song to me
+    - Please suggest one song to me
+    - I want a song
+    - I want a [calm]{"entity": "song_energy", "value": "low energy"} and [sad]{"entity": "song_valence", "value": "low cheerfulness"} song
+    - I want a k-pop song
+    - song suggestion
+    - Song suggestion, please
+    - Suggest a k-pop song
+    - Give me a song
+    - I want to ask for a k-pop song
+    - Give me a k-pop song
+    - find a k-pop song for me
+    - Give me a [very cheerful](song_valence) [energetic](song_energy) [danceable](song_danceability) k-pop song
+    - find a [very happy](song_valence) [very energetic](song_energy) [very danceable](song_danceability) k-pop song for me
+    - suggest a [highly cheerful](song_valence) [highly energetic](song_energy) [highly danceable](song_danceability) k-pop song
+    - find a [not sad](song_valence) [not calm](song_energy) [a bit danceable](song_danceability) k-pop song for me
+    - please suggest a [not too sad](song_valence) [not too calm](song_energy) [just a bit danceable](song_danceability) k-pop song
+    - can you please find a [little sad](song_valence) [little calm](song_energy) [not danceable](song_danceability) k-pop song for me
+    - Give me a [not much sad](song_valence) [not much calm](song_energy) [not too danceable](song_danceability) k-pop song
+    - find a [not so sad](song_valence) [not so calm](song_energy) [little danceable](song_danceability) k-pop song for me
+    - find a [a bit cheerful](song_valence) [not very calm](song_energy) [not much danceable](song_danceability) k-pop song for me
+    - Give me a [just a bit happy](song_valence) [a bit energetic](song_energy) [not so danceable](song_danceability) song by [Blackpink](group)
+    - find a [a bit sad](song_valence) [just a bit energetic](song_energy) [not very danceable](song_danceability) k-pop song for me
+    - Give me a [sad](song_valence) [calm](song_energy) song by [NCT](group)
+    - find a [very sad](song_valence) [very calm](song_energy)  song by [Loona](group)
+    - find a [highly sad](song_valence) [highly calm](song_energy)  k-pop song for me
+    - Give me a [not cheerful](song_valence) [not energetic](song_energy) [BTS](group) song
+    - find a [not happy](song_valence) [not too energetic](song_energy) k-pop song by [EXO](group)
+    - Give me a [not too happy](song_valence) [little energetic](song_energy)  [Stray Kids](group) song for me
+    - help me find a [not too cheerful](song_valence) [not much energetic](song_energy) song by [NCT](group)
+    - find a [little cheerful](song_valence) [not so energetic](song_energy)  [BTS](group) song for me
+    - please Give me a [not much happy](song_valence) [not very energetic](song_energy) song by [BTS](group)
+    - you should find a [not so happy](song_valence)  k-pop song for me
+    - Give me a [not too happy](song_valence) k-pop song
+    - find the perfect k-pop song with [low energy](song_energy) level
+    - help me find a song
+    - Help me find a k-pop song with [high danceability], please
+    - Suggest a [Blackpink](group) song that is [not too sad]{"entity": "song_valence", "value": "high cheerfulness"} please
+    - I want a [Seventeen](group) song suggestion of [medium energy](song_energy)
+    - I want to listen to a song by [BTS](group)
+    - give me a song by [Stray Kids](group)
+    - Give me a [EXO](group) song
+    - i want a song but I don't know anything about k-pop
+    - give me a song please. I want it to be [very happy]{"entity": "song_valence", "value": "high cheerfulness"}
+    - Can you suggest me a song since I don't know k-pop
+    - I want a song but I don't know any group
+    - I want a song but I don't know k-pop
+    - thank you, I would like to listen to one of their songs now
+    - thanks. can you suggest one of their songs please
+    - give me one of their songs, also [very danceable]{"entity": "song_danceability", "value": "high danceability"}
+    - suggest one song by them
+    - can I have one song of theirs
+    - suggest a song please
+    - suggest another song from them
+    - suggest a [stray kids]{"entity": "group", "value": "Stray Kids"} song of [medium cheerfulness](song_valence), [calm](song_energy) and with [low danceability](song_danceability)
+    - suggest a [skz]{"entity": "group", "value": "Stray Kids"} song of [high danceability](song_danceability), [low energy](song_energy) and with [high cheerfulness](song_valence)
+    - suggest a [SKZ]{"entity": "group", "value": "Stray Kids"} song with [medium danceability](song_danceability), [high energy](song_energy) and with [low cheerfulness](song_valence)
+    - suggest a [s.k.z.]{"entity": "group", "value": "Stray Kids"} song. I want it [happy](song_valence), [calm](song_energy) and with [low danceability](song_danceability)
+    - suggest a [s. k. z.]{"entity": "group", "value": "Stray Kids"} song to me
+    - suggest a [stray]{"entity": "group", "value": "Stray Kids"} song to me
+    - suggest a [Stray kids]{"entity": "group", "value": "Stray Kids"} song to me
+    - suggest a [bts]{"entity": "group", "value": "BTS"} song to me
+    - suggest a [b.t.s.]{"entity": "group", "value": "BTS"} song to me
+    - suggest a [b. t. s.]{"entity": "group", "value": "BTS"} song to me
+    - suggest a [Bts]{"entity": "group", "value": "BTS"} song to me
+    - suggest a [nct]{"entity": "group", "value": "NCT"} song to me
+    - suggest a [n. c. t.]{"entity": "group", "value": "NCT"} song to me
+    - suggest a [n.c.t.]{"entity": "group", "value": "NCT"} song to me
+    - suggest a [Nct]{"entity": "group", "value": "NCT"} song to me
+    - suggest a [neo culture technology]{"entity": "group", "value": "NCT"} song to me
+    - suggest a [WayV]{"entity": "group", "value": "NCT"} song to me
+    - suggest a [Nct 127]{"entity": "group", "value": "NCT"} song to me
+    - suggest a [NCT127]{"entity": "group", "value": "NCT"} song to me
+    - suggest a [Nct Dream]{"entity": "group", "value": "NCT"} song to me
+    - suggest a [NCT DREAM]{"entity": "group", "value": "NCT"} song to me
+    - suggest a [Nct U]{"entity": "group", "value": "NCT"} song to me
+    - suggest a [NCT U]{"entity": "group", "value": "NCT"} song to me
+    - suggest a [black pink]{"entity": "group", "value": "Blackpink"} song to me
+    - suggest a [Black Pink]{"entity": "group", "value": "Blackpink"} song to me
+    - suggest a [b.p.]{"entity": "group", "value": "Blackpink"} song to me
+    - suggest a [bp]{"entity": "group", "value": "Blackpink"} song to me
+    - suggest a [Bp]{"entity": "group", "value": "Blackpink"} song to me
+    - suggest a [blackpink]{"entity": "group", "value": "Blackpink"} song to me
+    - suggest a [seventeen]{"entity": "group", "value": "Seventeen"} song to me
+    - suggest a [SEVENTEEN]{"entity": "group", "value": "Seventeen"} song to me
+    - suggest a [17]{"entity": "group", "value": "Seventeen"} song to me
+    - suggest a [svt]{"entity": "group", "value": "Seventeen"} song to me
+    - suggest a [s. v. t.]{"entity": "group", "value": "Seventeen"} song to me
+    - suggest a [seven teen]{"entity": "group", "value": "Seventeen"} song to me
+    - suggest a [t.x.t.]{"entity": "group", "value": "TXT"} song to me
+    - suggest a [t. x. t.]{"entity": "group", "value": "TXT"} song to me
+    - suggest a [txt]{"entity": "group", "value": "TXT"} song to me
+    - suggest a [tomorrow x together]{"entity": "group", "value": "TXT"} song to me
+    - suggest a [tomorrow by together]{"entity": "group", "value": "TXT"} song to me
+    - suggest a [TOMORROW X TOGETHER]{"entity": "group", "value": "TXT"} song to me
+    - suggest a [Exo]{"entity": "group", "value": "EXO"} song to me
+    - suggest a [exo]{"entity": "group", "value": "EXO"} song to me
+    - suggest a [e. x. o.]{"entity": "group", "value": "EXO"} song to me
+    - ok, can you please suggest one of their songs
+- intent: inform_group
+  examples: |
+    - [Seventeen](group) please
+    - [EXO](group)
+    - [Blackpink](group)
+    - [BTS](group) thanks
+    - a [TXT](group) song
+    - yes, [Stray Kids](group)
+    - yep [TXT](group)
+    - I'd say [NCT](group)
+    - [NCT](group)
+    - [Stray Kids](group)
+    - a [NCT](group) song
+    - a [BTS](group) song
+    - a [Stray Kids](group) song
+    - a [EXO](group) song
+    - a [Seventeen](group) song
+    - actually I prefer [Blackpink](group)
+    - actually I prefer a [Seventeen](group) song
+    - actually make it a [BTS](group) song
+    - [nct]{"entity": "group", "value": "NCT"}
+    - [txt]{"entity": "group", "value": "TXT"}
+    - [blackpink]{"entity": "group", "value": "Blackpink"}
+    - maybe [twice](group)
+    - let's do [bts]{"entity": "group", "value": "BTS"} then
+    - I told you [NCT](group)
+- intent: request_group_info_form
+  examples: |
+    - I want to know something about [itzy](group)
+    - can you tell me a bit about [n.c.t.]{"entity": "group", "value": "NCT"}
+    - please tell me about [s.k.z.]{"entity": "group", "value": "Stray Kids"}
+    - tell me anything you know about [17]{"entity": "group", "value": "Seventeen"}
+    - Can you tell me something about them please
+    - I want some info about the group
+    - Can you give me some information about [EXO](group)?
+    - can you give me some info about [Stray Kids](group)
+    - no, but I want to know something about [Blackpink](group)
+    - no thanks but can you tell me a bit about [n.c.t.]{"entity": "group", "value": "NCT"}
+    - no, but please tell me about [stray]{"entity": "group", "value": "Stray Kids"}
+    - no, but Can you give me some information about [Seventeen](group) instead?
+    - no thanks. can you give some info about [shinee](group) instead
+    - can you tell me something about [sf9](group)
+    - can you tell me something about [aespa](group)
+    - can you tell me something about [Twice](group)
+    - can you tell me something about [Mamamoo](group)
+    - can you tell me something about [Loona](group)
+    - can you tell me something about [Red Velvet](group)
+    - can you tell me something about [(g)i-dle](group)
+    - can you tell me something about [GOT](group)
+    - can you tell me something about [Girls generation](group)
+    - can you tell me something about [NewJeans](group)
+    - can you tell me something about [lesserafim](group)
+    - can you tell me something about [kep1er](group)
+    - can you tell me something about [wanna one](group)
+    - can you tell me something about [GOT7](group)
+    - can you tell me something about [enhypen](group)
+    - can you tell me something about [p1harmony](group)
+    - can you tell me something about [monsta x](group)
+    - can you tell me something about [super junior](group)
+    - can you tell me something about [ateez](group)
+    - can you tell me something about [big Bang ](group)
+    - can you tell me something about [superm](group)
+    - can you tell me something about [ikon](group)
+    - can you tell me something about [shinee](group)
+    - can you tell me something about [pentagon](group)
+    - can you tell me something about [treasure](group)
+    - can you tell me something about [2pm](group)
+    - can you tell me something about [Oneus](group)
+    - can you tell me something about [astro](group)
+    - can you tell me something about [tvxq](group)
+    - can you tell me something about [winner](group)
+    - can you tell me something about [the boyz](group)
+    - can you tell me something about [day6](group)
+    - can you tell me something about [btob](group)
+- intent: group_info_general
+  examples: |
+    - I want to know everything
+    - please tell me everything
+    - any kind of information you know about them
+    - I want to know all of them
+    - tell me all
+    - all
+    - yes, tell me everything about them
+    - can you tell me anything you said
+    - tell me anything, thank you
+    - I'm interesting in knowing everything you mentioned
+    - tell me everything
+    - Who are [EXO](group)?
+    - I don't know who are [NCT](group)
+    - I don't know who [TXT](group) are
+    - Who are them?
+    - everything
+    - anything
+    - no but who are [nct]{"entity": "group", "value": "NCT"}
+- intent: group_info_debut
+  examples: |
+    - when did [NCT](group) debut?
+    - what is [tomorrow by together]{"entity": "group", "value": "TXT"} debut date
+    - debut year
+    - When did they debut
+    - tell me the year of debut
+    - tell me debut date
+    - can you tell me their debut year
+    - tell me about their debut
+    - tell me their debut year
+    - actually when did they debut
+- intent: group_info_members
+  examples: |
+    - how many members are there in [enhypen](group)?
+    - How many members do [p. 1 harmony](group) have?
+    - group size
+    - the number of members
+    - how many of them
+    - How many members are there?
+    - how many of them are there
+    - what is the size of the group
+    - total members in [BTS](group)
+    - members
+    - total members
+    - tell me about members
+    - how many members does the group have
+- intent: group_info_company
+  examples: |
+    - I want to know the company of [black pink]{"entity": "group", "value": "Blackpink"}
+    - What is [e.x.o.]{"entity": "group", "value": "EXO"} agency please?
+    - I want to know the agency of [17]{"entity": "group", "value": "Seventeen"}
+    - whats their company please
+    - company?
+    - their agency
+    - tell me about company
+    - is their agency jyp?
+    - is their agency sm?
+    - is their agency yg?
+    - is their agency bighit?
+    - is their agency pledis?
+- intent: group_info_activity
+  examples: |
+    - Are [skz]{"entity": "group", "value": "Stray Kids"} still active?
+    - what is [BTS](group) activity status
+    - tell me about their activity
+    - Are they active or not?
+    - are they still active
+    - activity status
+    - can you please tell me about the activity status of [Seventeen](group)
+    - what is the activity status of [seventeen]{"entity": "group", "value": "Seventeen"} then
+- intent: group_info_unknown
+  examples: |
+    - who is the leader?
+    - who is the maknae
+    - When is the next comeback?
+    - What is the album name?
+    - what's their last album name
+    - what's their debut song?
+    - What is the most famous song of [NCT](group)
+    - what's their most famous song?
+    - what are their names
+    - their names
+    - who are those members
+    - do you know also their names?
+    - do you know what does skz mean?
+    - what does bts mean?
+    - what does txt mean?
+    - what does nct mean?
+    - what does exo mean?
+    - why are they called seventeen?
+    - can you please tell me who is the leader of [seventeen]{"entity": "group", "value": "Seventeen"}
+    - ok but what are their names
+- intent: response_negative
+  examples: |
+    - actually no
+    - nope
+    - no
+    - Nope
+    - I would prefer not
+    - no thanks, I'm done
+    - no it's not correct
+    - Noo
+    - that's not correct
+    - No thanks
+    - no thank you
+    - nope, thanks
+    - no, I'm done
+    - no, I'm good
+    - not too much
+    - low
+    - not much
+    - nothing
+    - not at all
+    - no sorry
+    - no I was wrong
+    - not really
+    - no, I don't know anything
+    - no thanks
+    - nope thanks
+    - Nooo
+    - no, just give me a song
+- intent: response_positive
+  examples: |
+    - good
+    - ok
+    - that's ok
+    - that would be ok
+    - ok please
+    - yeah all is good
+    - yep
+    - yeah
+    - perfect
+    - yes, that is right
+    - yes
+    - that's right
+    - correct
+    - Yes
+    - Yeah
+    - yes please
+    - yes, correct
+    - actually yes
+    - Yes you are right
+    - You're correct
+    - A lot
+    - a lot
+    - a lot please
+    - higly
+    - high level
+    - yes, very much
+    - very much please
+    - very very much
+    - I'd say yes
+    - ok thanks
+    - ok thank you
+    - Id say a lot
+    - Yes I have some preferences
+    - alright
+    - sure
+    - of course
+    - nice
+    - yes tell me
+- intent: inform_song
+  examples: |
+    - yes, [cheerful]{"entity": "song_valence", "value": "high cheerfulness"}
+    - yes, [not happy]{"entity": "song_valence", "value": "low cheerfulness"} and of [high danceability](song_danceability)
+    - yes, make it [calm]{"entity": "song_energy", "value": "low energy"} [sad]{"entity": "song_valence", "value": "low cheerfulness"} and [not very danceable]{"entity": "song_danceability", "value": "low danceability"}
+    - yes, [energetic]{"entity": "song_energy", "value": "high energy"}
+    - I want it to be of [medium energy](song_energy) and [low danceability](song_danceability)
+    - make it [happy](song_valence), [calm](song_energy) and with [low danceability](song_danceability)
+    - I want a [calm]{"entity": "song_energy", "value": "low energy"} and [sad]{"entity": "song_valence", "value": "low cheerfulness"} one
+    - yes, I want it [happy]{"entity": "song_valence", "value": "high cheerfulness"} and [calm]{"entity": "song_energy", "value": "low energy"}
+    - yes, make it [happy]{"entity": "song_valence", "value": "high cheerfulness"}, [danceable]{"entity": "song_danceability", "value": "high danceability"} and [calm]{"entity": "song_energy", "value": "low energy"}
+- intent: response_middle
+  examples: |
+    - A bit
+    - only a bit
+    - just a bit
+    - so and so
+    - in the middle
+    - medium level
+    - Middle level
+    - medium
+    - something in between
+    - so so
+    - So-so
+    - neutral
+- intent: response_neutral
+  examples: |
+    - I don't know
+    - I don't care
+    - dunno
+    - don't care
+    - honestly I don't know
+    - idk
+    - it's the same
+    - same
+    - any type is ok for me
+    - any level is good
+    - any is ok
+    - I don't mind
+    - everything is ok for me
+    - random
+    - A random one is ok
+    - casual value
+    - every value is good
+    - anything would be good
+    - any value is great
+    - i don't know about this. you choose
+    - I dont know. please select a random one
+    - everything is good. choose for me
+    - it's the same, you choose
+    - a random one thanks
+    - please select randomly
+    - random is good
+    - random group
+    - random group is ok
+    - no I don't have preferences
+    - I don't have specific tastes please select random
+    - I don't have preferences
+    - I don't have any condition to put
+    - I don't have specific desires
+    - no, random is ok
+- intent: stop
+  examples: |
+    - Actually i want to modify cheerfulness level
+    - Actually i want to change energy
+    - i want to modify danceability level
+    - Actually I changed my mind
+    - I changed my mind
+    - I want to stop
+    - please stop
+    - stop
+    - stop please
+    - restart please
+    - please go back
+    - go back
+    - interrupt
+    - please interrupt requests
+- intent: goodbye
+  examples: |
+    - thanks bye
+    - Bye
+    - No, I'm ok. bye
+    - goodbye
+    - thank you bye
+    - bye bye
+    - Goodbye
+    - See you
+    - Talk to you later
+    - thank you goodbye
+    - bye
+    - yes bye
+    - no, bye!
+    - nothing bye
+    - no bye
+    - I am fine
+    - ok bye
+- intent: out_of_scope
+  examples: |
+    - What is 2 + 2?
+    - Who's the US President?
+    - do you have shoes
+    - what is your name
+    - are you real
+    - do you have a sister
+    - book a flight from milan to ny
+    - how far is the square
+    - give me the directions to time square
+    - x < 10
+    - why are you telling this
+    - what is the reason for this
+    - why do you think this
+    - can you make coffee
+    - what languages do you speak
+- intent: request_list_groups
+  examples: |
+    - among which can I choose
+    - what groups can I choose
+    - what are the available groups
+    - which are the available ones
+    - can you list the groups I can choose
+    - list the groups I can select
+    - list the ones that can be selected
+    - what is the list of possible groups
+    - what groups can I choose from
+    - what groups can I ask
+- intent: general_info_kpop
+  examples: |
+    - what is k-pop?
+    - can you tell me what kPop is
+    - I don't know what is kpop
+    - can you tell me what k Pop is
+    - I don't know what is k pop
+    - I don't know k-pop
+    - Do you like k-pop
+    - tell me something random about k-pop
+    - give me general info about k-pop
+    - what's k pop
+    - tell me something about k pop
+- intent: general_info_bot
+  examples: |
+    - What can I do?
+    - what can I ask you
+    - What can you tell me
+    - I don't know what to ask
+    - what should I do
+    - what are the things you can do
+    - tell me about your functionalities
+    - what can you do for me
+    - what are the things you can do exactly
+    - what can I ask
+    - what questions can I ask
+- intent: group_info_debut+group_info_members
+  examples: |
+    - when did they debut and how many of them are there
+    - debut? members?
+    - how many members, what is the debut year
+    - members and debut
+    - whats the debut year? and how many members is the group composed of
+    - what is their debut year and number of members?
+- intent: group_info_debut+group_info_company
+  examples: |
+    - debut year? company?
+    - when did they debut and what is their agency
+    - agency and debut year
+    - what is the company and the debut year
+    - whats the debut year? and tell me info about company
+- intent: group_info_debut+group_info_activity
+  examples: |
+    - debut year? activity status?
+    - when did they debut and what is their activity
+    - activity status and debut year
+    - what is the activity and debut
+    - tell me about the debut and the activity status
+    - ok so tell me if their are still active and the debut year
+- intent: group_info_debut+group_info_unknown
+  examples: |
+    - debut year? leader?
+    - when did they debut and what are their names
+    - can you please tell me [nct]{"entity": "group", "value": "NCT"} debut year and leader
+    - when is next comeback and when did they debut
+    - tell me about debut and maknae
+- intent: group_info_members+group_info_company
+  examples: |
+    - how many members? company?
+    - what is the number of members and their agency
+    - what is their company and how many of them are there
+    - how many members does the group have and name of company
+    - agency and group size
+- intent: group_info_members+group_info_activity
+  examples: |
+    - how many members? activity?
+    - what is the number of members and their activity status
+    - activity and group size
+    - can you tell me how many are there in the group? and activity status
+    - what is their activity and the members
+- intent: group_info_members+group_info_unknown
+  examples: |
+    - how many members? who is the maknae?
+    - I want to know how many members and their leader
+    - when is next comeback and what is their group size
+    - tell me about the number of members and their maknae
+    - can you please tell me about [nct]{"entity": "group", "value": "NCT"} leader and how many are they
+- intent: group_info_company+group_info_activity
+  examples: |
+    - company name? activity status?
+    - I want to know the agency and activity
+    - activity and company of the group
+    - what is [NCT](group) agency? and activity status
+    - what is [BTS](group) activity status and agency
+- intent: group_info_company+group_info_unknown
+  examples: |
+    - company name? last album name?
+    - I want to know the agency and their next comeback
+    - when is next comeback and what is their company
+    - tell me about the agency and their maknae
+    - can you please tell me about [bts]{"entity": "group", "value": "BTS"} leader and agency
+    - yes. what is their agency and also names
+- intent: group_info_activity+group_info_unknown
+  examples: |
+    - activity status? last album name?
+    - I want to know if they are active and their next comeback
+    - when is next comeback and are they still active
+    - tell me about their activity status and their maknae
+    - can you please tell me about [bts]{"entity": "group", "value": "BTS"} leader and activity
+- intent: group_info_members+group_info_debut+group_info_activity
+  examples: |
+    - how many members and when did they debut and activity status
+    - how many members? debut year? activity?
+    - what is the size of the group, the debut year and the activity status
+    - please tell me about their activity, their debut and the number of members
+    - are they still active? when did they debut? how many in [Seventeen](group)?
+- intent: group_info_members+group_info_debut+group_info_company
+  examples: |
+    - how many members and when did they debut and company
+    - how many members? debut year? agency?
+    - what is the size of the group, the debut year and the company
+    - please tell me about their agency, their debut and the number of members
+    - what's their company? when did they debut? how many in [Seventeen](group)?
+- intent: group_info_activity+group_info_debut+group_info_company
+  examples: |
+    - activity status and when did they debut and company
+    - activity? debut year? agency?
+    - what is the activity status of the group, the debut year and the company
+    - please tell me about their agency, their debut and the activity
+    - what's their company? when did they debut? are [Seventeen](group) still active?
+- intent: group_info_activity+group_info_members+group_info_company
+  examples: |
+    - activity status and how many members and company
+    - activity? members? agency?
+    - tell me the number of members in [exo]{"entity": "group", "value": "EXO"} and also their company and activity status
+    - please tell me about their agency, their group size and the activity
+    - what's their company? how many of them are there? are [Seventeen](group) still active?

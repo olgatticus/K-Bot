@@ -1,0 +1,44 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-group",
+      "2": "I-group",
+      "3": "L-group",
+      "4": "U-group",
+      "5": "B-song_danceability",
+      "6": "I-song_danceability",
+      "7": "L-song_danceability",
+      "8": "U-song_danceability",
+      "9": "B-song_energy",
+      "10": "I-song_energy",
+      "11": "L-song_energy",
+      "12": "U-song_energy",
+      "13": "B-song_valence",
+      "14": "I-song_valence",
+      "15": "L-song_valence",
+      "16": "U-song_valence",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-group": 1,
+      "I-group": 2,
+      "L-group": 3,
+      "U-group": 4,
+      "B-song_danceability": 5,
+      "I-song_danceability": 6,
+      "L-song_danceability": 7,
+      "U-song_danceability": 8,
+      "B-song_energy": 9,
+      "I-song_energy": 10,
+      "L-song_energy": 11,
+      "U-song_energy": 12,
+      "B-song_valence": 13,
+      "I-song_valence": 14,
+      "L-song_valence": 15,
+      "U-song_valence": 16,
+      "O": 0
+    },
+    "num_tags": 17
+  }
+]

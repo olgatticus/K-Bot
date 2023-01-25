@@ -1,0 +1,38 @@
+[
+  {
+    "text": "no but who are exo",
+    "entities": [
+      {
+        "start": 15,
+        "end": 18,
+        "value": "EXO",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Who are blackpink?",
+    "entities": [
+      {
+        "start": 8,
+        "end": 17,
+        "value": "Blackpink",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Can you tell me something about bts",
+    "entities": [
+      {
+        "start": 32,
+        "end": 35,
+        "value": "BTS",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  }
+]

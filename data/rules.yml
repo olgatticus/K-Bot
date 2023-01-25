@@ -1,0 +1,128 @@
+version: "3.1"
+
+rules:
+
+- rule: Activate song suggestion form
+  steps:
+  - intent: request_song_suggestion_form
+  - action: action_set_song_slots
+  - action: song_suggestion_form
+  - active_loop: song_suggestion_form
+
+- rule: Submit song suggestion form
+  condition:
+  # Condition that form is active.
+  - active_loop: song_suggestion_form
+  steps:
+  # Form is deactivated
+  - action: song_suggestion_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  # The actions we want to run when the form is submitted.
+  - action: action_submit
+  - action: action_suggest_song
+
+- rule: Group info form 1
+  steps:
+  - intent: request_group_info_form
+  - action: group_info_form
+  - active_loop: group_info_form
+
+- rule: Group info form 2
+  steps:
+  - action: action_suggest_song
+  - intent: response_positive
+  - action: group_info_form
+  - active_loop: group_info_form
+
+- rule: Submit group info form
+  condition:
+  # Condition that form is active.
+  - active_loop: group_info_form
+  steps:
+  # Form is deactivated
+  - action: group_info_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  # The actions we want to run when the form is submitted.
+  - action: action_fill_info_slots
+  - action: utter_group_info_intro
+
+
+- rule: Out of scope request
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+
+- rule: Example of an unhappy path for song suggestion, user wants to change preference on group
+  condition:
+  # Condition that form is active.
+  - active_loop: song_suggestion_form
+  steps:
+  # This unhappy path handles the case of an intent of changing group name
+  - or:
+    - intent: inform_group
+    - intent: request_song_suggestion_form
+  # Return to form after handling the intent of changing group
+  - action: song_suggestion_form
+  - active_loop: song_suggestion_form
+
+- rule: End of conversation
+  steps:
+    - intent: goodbye
+    - action: utter_ending
+
+
+- rule: Start of conversation
+  conversation_start: true
+  steps:
+  - intent: welcome_greet
+  - action: utter_welcome_greet
+
+- rule: Request group list
+  steps:
+  - intent: request_list_groups
+  - action: utter_list_groups
+
+- rule: General info about k-pop
+  steps:
+  - intent: general_info_kpop
+  - action: utter_general_info_kpop
+
+- rule: General info about bot functionalities
+  steps:
+  - intent: general_info_bot
+  - action: utter_general_info_bot
+
+- rule: Ask general info about group
+  steps:
+  - intent: group_info_general
+  - action: action_fill_info_slots
+  - action: utter_group_info_general
+
+- rule: Ask debut year of a group 
+  steps:
+  - intent: group_info_debut
+  - action: action_fill_info_slots
+  - action: utter_group_info_debut
+
+- rule: Ask number of members of a group 
+  steps:
+  - intent: group_info_members
+  - action: action_fill_info_slots
+  - action: utter_group_info_members
+
+- rule: Ask activity status of a group 
+  steps:
+  - intent: group_info_activity
+  - action: action_fill_info_slots
+  - action: utter_group_info_activity  
+
+- rule: Ask company of a group
+  steps:
+  - intent: group_info_company
+  - action: action_fill_info_slots
+  - action: utter_group_info_company

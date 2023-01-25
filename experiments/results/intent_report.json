@@ -1,0 +1,323 @@
+{
+  "group_info_members+group_info_company": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 5,
+    "confused_with": {}
+  },
+  "group_info_activity+group_info_unknown": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 5,
+    "confused_with": {}
+  },
+  "stop": {
+    "precision": 1.0,
+    "recall": 0.8571428571428571,
+    "f1-score": 0.923076923076923,
+    "support": 14,
+    "confused_with": {
+      "request_song_suggestion_form": 1,
+      "welcome_greet": 1
+    }
+  },
+  "group_info_members+group_info_debut+group_info_company": {
+    "precision": 0.8333333333333334,
+    "recall": 1.0,
+    "f1-score": 0.9090909090909091,
+    "support": 5,
+    "confused_with": {}
+  },
+  "group_info_unknown": {
+    "precision": 0.8888888888888888,
+    "recall": 0.8,
+    "f1-score": 0.8421052631578948,
+    "support": 20,
+    "confused_with": {
+      "group_info_members+group_info_unknown": 2,
+      "inform_group": 1
+    }
+  },
+  "group_info_company+group_info_activity": {
+    "precision": 1.0,
+    "recall": 0.8,
+    "f1-score": 0.888888888888889,
+    "support": 5,
+    "confused_with": {
+      "group_info_activity+group_info_members+group_info_company": 1
+    }
+  },
+  "general_info_kpop": {
+    "precision": 1.0,
+    "recall": 0.8181818181818182,
+    "f1-score": 0.9,
+    "support": 11,
+    "confused_with": {
+      "request_group_info_form": 1,
+      "request_song_suggestion_form": 1
+    }
+  },
+  "group_info_debut+group_info_unknown": {
+    "precision": 0.8333333333333334,
+    "recall": 1.0,
+    "f1-score": 0.9090909090909091,
+    "support": 5,
+    "confused_with": {}
+  },
+  "group_info_activity+group_info_members+group_info_company": {
+    "precision": 0.8333333333333334,
+    "recall": 1.0,
+    "f1-score": 0.9090909090909091,
+    "support": 5,
+    "confused_with": {}
+  },
+  "response_positive": {
+    "precision": 0.75,
+    "recall": 0.7894736842105263,
+    "f1-score": 0.7692307692307692,
+    "support": 38,
+    "confused_with": {
+      "response_neutral": 4,
+      "inform_group": 2
+    }
+  },
+  "group_info_members": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 13,
+    "confused_with": {}
+  },
+  "welcome_greet": {
+    "precision": 0.8235294117647058,
+    "recall": 0.7777777777777778,
+    "f1-score": 0.7999999999999999,
+    "support": 18,
+    "confused_with": {
+      "start": 1,
+      "response_positive": 1
+    }
+  },
+  "inform_group": {
+    "precision": 0.8,
+    "recall": 0.8333333333333334,
+    "f1-score": 0.816326530612245,
+    "support": 24,
+    "confused_with": {
+      "response_positive": 2,
+      "request_song_suggestion_form": 1
+    }
+  },
+  "request_list_groups": {
+    "precision": 1.0,
+    "recall": 0.9,
+    "f1-score": 0.9473684210526316,
+    "support": 10,
+    "confused_with": {
+      "group_info_company+group_info_unknown": 1
+    }
+  },
+  "group_info_company": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 12,
+    "confused_with": {}
+  },
+  "request_group_info_form": {
+    "precision": 0.8627450980392157,
+    "recall": 0.9565217391304348,
+    "f1-score": 0.9072164948453608,
+    "support": 46,
+    "confused_with": {
+      "request_song_suggestion_form": 1,
+      "group_info_general": 1
+    }
+  },
+  "request_song_suggestion_form": {
+    "precision": 0.8956521739130435,
+    "recall": 0.9809523809523809,
+    "f1-score": 0.9363636363636364,
+    "support": 105,
+    "confused_with": {
+      "inform_group": 1,
+      "inform_song": 1
+    }
+  },
+  "inform_song": {
+    "precision": 0.8,
+    "recall": 0.4444444444444444,
+    "f1-score": 0.5714285714285714,
+    "support": 9,
+    "confused_with": {
+      "request_song_suggestion_form": 4,
+      "response_positive": 1
+    }
+  },
+  "response_neutral": {
+    "precision": 0.7777777777777778,
+    "recall": 0.8235294117647058,
+    "f1-score": 0.7999999999999999,
+    "support": 34,
+    "confused_with": {
+      "response_positive": 3,
+      "response_negative": 2
+    }
+  },
+  "group_info_debut+group_info_members": {
+    "precision": 1.0,
+    "recall": 0.8333333333333334,
+    "f1-score": 0.9090909090909091,
+    "support": 6,
+    "confused_with": {
+      "group_info_members+group_info_debut+group_info_company": 1
+    }
+  },
+  "group_info_activity+group_info_debut+group_info_company": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 5,
+    "confused_with": {}
+  },
+  "out_of_scope": {
+    "precision": 1.0,
+    "recall": 0.3333333333333333,
+    "f1-score": 0.5,
+    "support": 15,
+    "confused_with": {
+      "response_neutral": 3,
+      "group_info_general": 2
+    }
+  },
+  "group_info_debut+group_info_company": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 5,
+    "confused_with": {}
+  },
+  "group_info_debut+group_info_activity": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 6,
+    "confused_with": {}
+  },
+  "group_info_activity": {
+    "precision": 1.0,
+    "recall": 0.875,
+    "f1-score": 0.9333333333333333,
+    "support": 8,
+    "confused_with": {
+      "group_info_members+group_info_activity": 1
+    }
+  },
+  "group_info_members+group_info_activity": {
+    "precision": 0.8333333333333334,
+    "recall": 1.0,
+    "f1-score": 0.9090909090909091,
+    "support": 5,
+    "confused_with": {}
+  },
+  "group_info_members+group_info_unknown": {
+    "precision": 0.7142857142857143,
+    "recall": 1.0,
+    "f1-score": 0.8333333333333333,
+    "support": 5,
+    "confused_with": {}
+  },
+  "group_info_members+group_info_debut+group_info_activity": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 5,
+    "confused_with": {}
+  },
+  "goodbye": {
+    "precision": 0.9333333333333333,
+    "recall": 0.8235294117647058,
+    "f1-score": 0.8749999999999999,
+    "support": 17,
+    "confused_with": {
+      "welcome_greet": 1,
+      "response_positive": 1
+    }
+  },
+  "response_middle": {
+    "precision": 1.0,
+    "recall": 0.75,
+    "f1-score": 0.8571428571428571,
+    "support": 12,
+    "confused_with": {
+      "response_negative": 2,
+      "request_group_info_form": 1
+    }
+  },
+  "general_info_bot": {
+    "precision": 0.9,
+    "recall": 0.8181818181818182,
+    "f1-score": 0.8571428571428572,
+    "support": 11,
+    "confused_with": {
+      "request_group_info_form": 1,
+      "group_info_general": 1
+    }
+  },
+  "group_info_company+group_info_unknown": {
+    "precision": 0.8571428571428571,
+    "recall": 1.0,
+    "f1-score": 0.923076923076923,
+    "support": 6,
+    "confused_with": {}
+  },
+  "group_info_general": {
+    "precision": 0.7142857142857143,
+    "recall": 0.8333333333333334,
+    "f1-score": 0.7692307692307692,
+    "support": 18,
+    "confused_with": {
+      "request_group_info_form": 3
+    }
+  },
+  "group_info_debut": {
+    "precision": 0.9,
+    "recall": 0.9,
+    "f1-score": 0.9,
+    "support": 10,
+    "confused_with": {
+      "group_info_debut+group_info_unknown": 1
+    }
+  },
+  "response_negative": {
+    "precision": 0.8461538461538461,
+    "recall": 0.8461538461538461,
+    "f1-score": 0.8461538461538461,
+    "support": 26,
+    "confused_with": {
+      "inform_group": 1,
+      "response_positive": 1
+    }
+  },
+  "micro avg": {
+    "precision": 0.8747697974217311,
+    "recall": 0.8731617647058824,
+    "f1-score": 0.8739650413983441,
+    "support": 544
+  },
+  "macro avg": {
+    "precision": 0.9084893756833837,
+    "recall": 0.8798349292296757,
+    "f1-score": 0.884053541815011,
+    "support": 544
+  },
+  "weighted avg": {
+    "precision": 0.8817651954217323,
+    "recall": 0.8731617647058824,
+    "f1-score": 0.8693796187485154,
+    "support": 544
+  },
+  "accuracy": 0.8731617647058824
+}

@@ -1,0 +1,395 @@
+version: "3.1"
+stories:
+- story: Basic test story Olga (/home/olgatticus/Rasa/kBot_final_multiple/tests/test_stories.yml)
+  steps:
+  - intent: welcome_greet
+  - action: utter_welcome_greet
+  - intent: request_song_suggestion_form
+  - action: action_set_song_slots
+  - action: song_suggestion_form
+  - active_loop: song_suggestion_form
+  - slot_was_set:
+    - requested_slot: group
+  - slot_was_set:
+    - group: twice
+  - slot_was_set:
+    - group: null
+  - slot_was_set:
+    - requested_slot: group
+  - intent: request_list_groups
+  - action: utter_list_groups
+  - slot_was_set:
+    - requested_slot: group
+  - slot_was_set:
+    - group: BTS
+  - slot_was_set:
+    - requested_slot: random_song
+  - slot_was_set:
+    - random_song: false
+  - slot_was_set:
+    - random_song: false
+  - slot_was_set:
+    - song_valence: high
+  - slot_was_set:
+    - song_energy: low
+  - slot_was_set:
+    - song_danceability: null
+  - slot_was_set:
+    - requested_slot: song_danceability
+  - slot_was_set:
+    - song_danceability: all
+  - slot_was_set:
+    - song_danceability: all
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_submit  # predicted: action_listen
+  - action: action_suggest_song
+  - slot_was_set:
+    - group: BTS
+  - intent: group_info_general
+    entities:
+    - group: EXO
+  - slot_was_set:
+    - group: EXO
+  - slot_was_set:
+    - group: EXO
+  - action: action_fill_info_slots
+  - slot_was_set:
+    - group_debut: '2012'
+  - slot_was_set:
+    - group_members: '9'
+  - slot_was_set:
+    - group_company: SM
+  - slot_was_set:
+    - group_activity: active
+  - action: utter_group_info_general
+  - intent: goodbye
+  - action: utter_ending
+- story: Basic test story Paola (/home/olgatticus/Rasa/kBot_final_multiple/tests/test_stories.yml)
+  steps:
+  - intent: welcome_greet
+  - action: utter_welcome_greet
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+  - intent: request_song_suggestion_form
+  - action: action_set_song_slots
+  - action: song_suggestion_form
+  - active_loop: song_suggestion_form
+  - slot_was_set:
+    - requested_slot: group
+  - slot_was_set:
+    - group: britney spears
+  - slot_was_set:
+    - group: null
+  - slot_was_set:
+    - requested_slot: group
+  - intent: request_list_groups
+  - action: utter_list_groups
+  - action: song_suggestion_form
+  - slot_was_set:
+    - requested_slot: group
+  - intent: stop
+  - action: utter_ask_continue  # predicted: action_deactivate_loop after action_unlikely_intent
+  - intent: response_positive
+  - action: action_deactivate_loop
+  - active_loop: null
+  - action: utter_suggest_tasks
+  - intent: goodbye
+  - action: utter_ending
+- story: Test story Eva (/home/olgatticus/Rasa/kBot_final_multiple/tests/test_stories.yml)
+  steps:
+  - intent: welcome_greet
+  - action: utter_welcome_greet
+  - intent: general_info_kpop
+  - action: utter_general_info_kpop
+  - intent: group_info_general
+    entities:
+    - group: Blackpink
+  - slot_was_set:
+    - group: Blackpink
+  - slot_was_set:
+    - group: Blackpink
+  - action: action_fill_info_slots
+  - slot_was_set:
+    - group_debut: '2016'
+  - slot_was_set:
+    - group_members: '4'
+  - slot_was_set:
+    - group_company: YG
+  - slot_was_set:
+    - group_activity: active
+  - action: utter_group_info_general
+  - intent: request_group_info_form
+    entities:
+    - group: BTS
+  - slot_was_set:
+    - group: BTS
+  - slot_was_set:
+    - group: BTS
+  - action: group_info_form
+  - active_loop: group_info_form
+  - slot_was_set:
+    - group: BTS
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_fill_info_slots
+  - slot_was_set:
+    - group_debut: '2013'
+  - slot_was_set:
+    - group_members: '7'
+  - slot_was_set:
+    - group_company: BigHit
+  - slot_was_set:
+    - group_activity: inactive
+  - action: utter_group_info_intro
+  - intent: group_info_members
+  - action: action_fill_info_slots
+  - slot_was_set:
+    - group_debut: '2013'
+  - slot_was_set:
+    - group_members: '7'
+  - slot_was_set:
+    - group_company: BigHit
+  - slot_was_set:
+    - group_activity: inactive
+  - action: utter_group_info_members
+  - intent: group_info_unknown  # predicted: nlu_fallback: Who are the 7 members?
+  - action: utter_group_info_unknown
+  - intent: request_song_suggestion_form
+  - action: action_set_song_slots
+  - slot_was_set:
+    - group: null
+  - slot_was_set:
+    - random_song: null
+  - slot_was_set:
+    - song_danceability: null
+  - slot_was_set:
+    - song_energy: null
+  - slot_was_set:
+    - song_valence: null
+  - action: song_suggestion_form
+  - active_loop: song_suggestion_form
+  - slot_was_set:
+    - requested_slot: group
+  - slot_was_set:
+    - group: none
+  - slot_was_set:
+    - group: none
+  - slot_was_set:
+    - requested_slot: random_song
+  - slot_was_set:
+    - random_song: false
+  - slot_was_set:
+    - random_song: false
+  - slot_was_set:
+    - song_valence: null
+  - slot_was_set:
+    - song_energy: null
+  - slot_was_set:
+    - song_danceability: null
+  - slot_was_set:
+    - requested_slot: song_valence
+  - slot_was_set:
+    - song_valence: low
+  - slot_was_set:
+    - song_valence: low
+  - slot_was_set:
+    - requested_slot: song_energy
+  - slot_was_set:
+    - song_energy: high
+  - slot_was_set:
+    - song_energy: high
+  - slot_was_set:
+    - requested_slot: song_danceability
+  - slot_was_set:
+    - song_danceability: high
+  - slot_was_set:
+    - song_danceability: high
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_submit
+  - action: action_suggest_song
+  - intent: response_negative
+  - action: utter_suggest_tasks
+  - intent: goodbye
+  - action: utter_ending
+- story: Test story Noemi (/home/olgatticus/Rasa/kBot_final_multiple/tests/test_stories.yml)
+  steps:
+  - intent: welcome_greet
+  - action: utter_welcome_greet
+  - intent: request_song_suggestion_form
+  - action: action_set_song_slots
+  - slot_was_set:
+    - group: null
+  - slot_was_set:
+    - random_song: null
+  - slot_was_set:
+    - song_danceability: null
+  - slot_was_set:
+    - song_energy: null
+  - slot_was_set:
+    - song_valence: null
+  - action: song_suggestion_form
+  - active_loop: song_suggestion_form
+  - slot_was_set:
+    - requested_slot: group
+  - slot_was_set:
+    - group: Stray Kids
+  - slot_was_set:
+    - group: Stray Kids
+  - slot_was_set:
+    - requested_slot: random_song
+  - slot_was_set:
+    - random_song: false
+  - slot_was_set:
+    - random_song: false
+  - slot_was_set:
+    - song_valence: null
+  - slot_was_set:
+    - song_energy: null
+  - slot_was_set:
+    - song_danceability: null
+  - slot_was_set:
+    - requested_slot: song_valence
+  - slot_was_set:
+    - song_valence: all
+  - slot_was_set:
+    - song_valence: all
+  - slot_was_set:
+    - requested_slot: song_energy
+  - slot_was_set:
+    - song_energy: high
+  - slot_was_set:
+    - song_energy: high
+  - slot_was_set:
+    - requested_slot: song_danceability
+  - slot_was_set:
+    - song_danceability: low
+  - slot_was_set:
+    - song_danceability: low
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_submit
+  - action: action_suggest_song
+  - slot_was_set:
+    - group: Stray Kids
+  - intent: response_positive
+  - action: group_info_form
+  - active_loop: group_info_form
+  - slot_was_set:
+    - group: Stray Kids
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_fill_info_slots
+  - slot_was_set:
+    - group_debut: '2018'
+  - slot_was_set:
+    - group_members: '8'
+  - slot_was_set:
+    - group_company: JYPE
+  - slot_was_set:
+    - group_activity: active
+  - action: utter_group_info_intro
+  - intent: group_info_members
+  - action: action_fill_info_slots
+  - slot_was_set:
+    - group_debut: '2018'
+  - slot_was_set:
+    - group_members: '8'
+  - slot_was_set:
+    - group_company: JYPE
+  - slot_was_set:
+    - group_activity: active
+  - action: utter_group_info_members
+  - intent: response_positive
+  - action: utter_suggest_tasks  # predicted: action_unlikely_intent
+  - intent: response_positive
+  - action: action_fill_info_slots  # predicted: action_unlikely_intent
+  - slot_was_set:
+    - group_debut: '2018'
+  - slot_was_set:
+    - group_members: '8'
+  - slot_was_set:
+    - group_company: JYPE
+  - slot_was_set:
+    - group_activity: active
+  - action: utter_group_info_intro
+  - intent: group_info_company
+  - action: action_fill_info_slots
+  - slot_was_set:
+    - group_debut: '2018'
+  - slot_was_set:
+    - group_members: '8'
+  - slot_was_set:
+    - group_company: JYPE
+  - slot_was_set:
+    - group_activity: active
+  - action: utter_group_info_company
+  - intent: group_info_unknown
+  - action: utter_group_info_unknown  # predicted: action_unlikely_intent
+  - intent: request_song_suggestion_form
+  - action: action_set_song_slots
+  - slot_was_set:
+    - group: null
+  - slot_was_set:
+    - random_song: null
+  - slot_was_set:
+    - song_danceability: null
+  - slot_was_set:
+    - song_energy: null
+  - slot_was_set:
+    - song_valence: null
+  - action: song_suggestion_form
+  - active_loop: song_suggestion_form
+  - slot_was_set:
+    - requested_slot: group
+  - slot_was_set:
+    - group: Blackpink
+  - slot_was_set:
+    - group: Blackpink
+  - slot_was_set:
+    - requested_slot: random_song
+  - slot_was_set:
+    - random_song: false
+  - slot_was_set:
+    - random_song: false
+  - slot_was_set:
+    - song_valence: null
+  - slot_was_set:
+    - song_energy: null
+  - slot_was_set:
+    - song_danceability: null
+  - slot_was_set:
+    - requested_slot: song_valence
+  - slot_was_set:
+    - song_valence: medium
+  - slot_was_set:
+    - song_valence: medium
+  - slot_was_set:
+    - requested_slot: song_energy
+  - slot_was_set:
+    - song_energy: high
+  - slot_was_set:
+    - song_energy: high
+  - slot_was_set:
+    - requested_slot: song_danceability
+  - slot_was_set:
+    - song_danceability: high
+  - slot_was_set:
+    - song_danceability: high
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_submit
+  - action: action_suggest_song
+  - slot_was_set:
+    - group: Blackpink
+  - intent: response_negative
+  - action: utter_suggest_tasks  # predicted: action_unlikely_intent
+  - intent: response_negative
+  - action: utter_general_info_bot

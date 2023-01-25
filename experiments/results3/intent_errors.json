@@ -1,0 +1,10 @@
+[
+  {
+    "text": "Who are the 7 members?",
+    "intent": "group_info_unknown",
+    "intent_prediction": {
+      "name": "group_info_members",
+      "confidence": 0.3555833697319031
+    }
+  }
+]

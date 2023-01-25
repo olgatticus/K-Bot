@@ -1,0 +1,59 @@
+{
+  "song_danceability": {
+    "precision": 0.8541666666666666,
+    "recall": 0.82,
+    "f1-score": 0.836734693877551,
+    "support": 50,
+    "confused_with": {
+      "song_energy": 5,
+      "song_valence": 3
+    }
+  },
+  "song_energy": {
+    "precision": 0.7866666666666666,
+    "recall": 0.8309859154929577,
+    "f1-score": 0.8082191780821917,
+    "support": 71,
+    "confused_with": {
+      "song_valence": 9,
+      "song_danceability": 3
+    }
+  },
+  "song_valence": {
+    "precision": 0.7906976744186046,
+    "recall": 0.85,
+    "f1-score": 0.8192771084337349,
+    "support": 80,
+    "confused_with": {
+      "song_energy": 7
+    }
+  },
+  "group": {
+    "precision": 0.9536423841059603,
+    "recall": 0.7058823529411765,
+    "f1-score": 0.8112676056338027,
+    "support": 204,
+    "confused_with": {
+      "song_valence": 1
+    }
+  },
+  "micro avg": {
+    "precision": 0.8666666666666667,
+    "recall": 0.7703703703703704,
+    "f1-score": 0.8156862745098039,
+    "support": 405
+  },
+  "macro avg": {
+    "precision": 0.8462933479644745,
+    "recall": 0.8017170671085336,
+    "f1-score": 0.8188746465068201,
+    "support": 405
+  },
+  "weighted avg": {
+    "precision": 0.8799025357475825,
+    "recall": 0.7703703703703704,
+    "f1-score": 0.8154593989177968,
+    "support": 405
+  },
+  "accuracy": 0.9639727361246349
+}

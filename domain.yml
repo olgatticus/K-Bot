@@ -1,0 +1,329 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+version: "3.1"
+
+intents:
+- welcome_greet
+- request_song_suggestion_form
+- request_group_info_form
+- inform_group
+- group_info_general
+- group_info_debut
+- group_info_members
+- group_info_company
+- group_info_activity
+- group_info_unknown
+- response_positive
+- response_negative
+- response_middle
+- response_neutral
+- request_list_groups
+- general_info_kpop
+- general_info_bot
+- inform_song
+- stop
+- goodbye
+- out_of_scope
+- group_info_debut+group_info_members
+- group_info_debut+group_info_company
+- group_info_debut+group_info_activity
+- group_info_debut+group_info_unknown
+- group_info_members+group_info_company
+- group_info_members+group_info_activity
+- group_info_members+group_info_unknown
+- group_info_company+group_info_activity
+- group_info_company+group_info_unknown
+- group_info_activity+group_info_unknown
+- group_info_members+group_info_debut+group_info_activity
+- group_info_members+group_info_debut+group_info_company
+- group_info_activity+group_info_debut+group_info_company
+- group_info_activity+group_info_members+group_info_company
+
+entities:
+- group
+- song_valence
+- song_energy
+- song_danceability
+
+slots:
+  group:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: group
+      - type: from_intent
+        value: "none"
+        intent: response_negative
+        conditions:
+        - active_loop: song_suggestion_form
+          requested_slot: group
+      - type: from_intent
+        value: "none"
+        intent: response_neutral
+        conditions:
+        - active_loop: song_suggestion_form
+          requested_slot: group
+
+  random_song:
+    type: bool
+    influence_conversation: true
+    mappings:
+    - type: from_intent
+      value: false
+      intent: response_positive
+      conditions:
+      - active_loop: song_suggestion_form
+        requested_slot: random_song
+    - type: from_intent
+      value: true
+      intent: response_negative
+      conditions:
+      - active_loop: song_suggestion_form
+        requested_slot: random_song
+    - type: from_intent
+      value: true
+      intent: response_neutral
+      conditions:
+      - active_loop: song_suggestion_form
+        requested_slot: random_song
+    - type: from_intent
+      value: false
+      intent: inform_song
+      conditions:
+      - active_loop: song_suggestion_form
+        requested_slot: random_song
+
+  song_valence:
+    type: categorical
+    values:
+      - low
+      - medium
+      - high 
+      - all
+    mappings:
+    - type: from_intent
+      value: high
+      intent: response_positive
+      conditions:
+      - active_loop: song_suggestion_form
+        requested_slot: song_valence
+    - type: from_intent
+      value: low
+      intent: response_negative
+      conditions:
+      - active_loop: song_suggestion_form
+        requested_slot: song_valence
+    - type: from_intent
+      value: all
+      intent: response_neutral
+      conditions:
+      - active_loop: song_suggestion_form
+        requested_slot: song_valence
+    - type: from_intent
+      value: medium
+      intent: response_middle
+      conditions:
+      - active_loop: song_suggestion_form
+        requested_slot: song_valence
+    - type: custom
+
+  song_energy:
+    type: categorical
+    values:
+      - low
+      - medium
+      - high 
+      - all
+    mappings:
+    - type: from_intent
+      value: high
+      intent: response_positive
+      conditions:
+      - active_loop: song_suggestion_form
+        requested_slot: song_energy
+    - type: from_intent
+      value: low
+      intent: response_negative
+      conditions:
+      - active_loop: song_suggestion_form
+        requested_slot: song_energy
+    - type: from_intent
+      value: all
+      intent: response_neutral
+      conditions:
+      - active_loop: song_suggestion_form
+        requested_slot: song_energy
+    - type: from_intent
+      value: medium
+      intent: response_middle
+      conditions:
+      - active_loop: song_suggestion_form
+        requested_slot: song_energy
+    - type: custom
+
+
+  song_danceability:
+    type: categorical
+    values:
+      - low
+      - medium
+      - high 
+      - all
+    mappings:
+    - type: from_intent
+      value: high
+      intent: response_positive
+      conditions:
+      - active_loop: song_suggestion_form
+        requested_slot: song_danceability
+    - type: from_intent
+      value: low
+      intent: response_negative
+      conditions:
+      - active_loop: song_suggestion_form
+        requested_slot: song_danceability
+    - type: from_intent
+      value: all
+      intent: response_neutral
+      conditions:
+      - active_loop: song_suggestion_form
+        requested_slot: song_danceability
+    - type: from_intent
+      value: medium
+      intent: response_middle
+      conditions:
+      - active_loop: song_suggestion_form
+        requested_slot: song_danceability
+    - type: custom
+
+
+  group_debut:
+    type: any
+    mappings:
+      - type: custom
+
+  group_members:
+    type: any
+    mappings:
+      - type: custom
+
+  group_company:
+    type: any
+    mappings:
+      - type: custom
+
+  group_activity:
+    type: any
+    mappings:
+      - type: custom
+
+
+responses:
+  utter_out_of_scope:
+  - text: "Sorry, I can't handle that request for now! Instead, I can suggest a K-Pop song, or talk about some K-Pop groups!"
+  utter_welcome_greet:
+  - text: "Hello! I'm a virtual assistant. I can help you find the perfect K-Pop song for you, or provide any information about your favorite groups. What can I do for you?" 
+  utter_ask_song_suggestion_form_group:
+  - text: "Do you have any preference about the group? In that case tell me their name please."
+  - text: "Would you like a specific group? If so, who?"
+  utter_ask_group_info_form_group:
+  - text: "The groups I can tell you about are BTS, NCT, EXO, Seventeen, Stray Kids, Blackpink and TXT. Which one interests you?"
+  utter_list_groups:
+  - text: "You can choose among BTS, NCT, EXO, Seventeen, Stray Kids, Blackpink and TXT."
+  - text: "The available groups are BTS, NCT, EXO, Seventeen, Stray Kids, Blackpink and TXT."
+  utter_ask_random_song:
+  - text: "May I ask you further questions to better understand your tastes, or not?"
+  utter_ask_song_energy:
+  - text: "Should the song be energic, or not?"
+  utter_ask_song_danceability:
+  - text: "Would you like it to be quite danceable, or not?"
+  utter_ask_song_valence:
+  - text: "Do you want the song to be cheerful, or not?"
+  utter_group_info_intro:
+  - text: "You can ask me about {group}'s agency, debut year, activity status and number of members."
+  - text: "I can tell you about {group}'s agency, debut year, activity status and number of members. What do you want to know?"
+  utter_group_info_unknown:
+  - text: "I’m sorry I don’t know about that! You can ask me, instead, about the agency, year of debut, total members and activity status."
+  utter_group_info_debut:
+  - text: "{group} debuted in {group_debut}."
+  utter_group_info_general:
+  - text: "{group} debuted in {group_debut}, their company is {group_company}, they are currently {group_members} and {group_activity}. Do you want to know about other groups?"
+  utter_group_info_members:
+  - text: "{group} is composed by {group_members} members."
+  utter_group_info_company:
+  - text: "Their company is {group_company}."
+  utter_group_info_activity:
+  - text: "The group is currently {group_activity}."
+  utter_submit_random:
+  - text: "I'm looking for a random song that may be good for you! The group will be {group}."
+  utter_submit:
+  - text: "I'm looking for a song with {valence} cheerfulness, {energy} energy and {danceability} danceability! The group will be {group}."
+  utter_suggest_song:
+  - text: "I suggest {song} by {group}! Do you want to know anything about them?"
+  utter_default:
+  - text: "Sorry, I didn’t understand that. Can you please retype it?"
+  utter_ending:
+  - text: "Goodbye. Thank you for interacting with me! I hope it was fun enough."
+  utter_ask_continue:
+  - text: "I'm going to interrupt myself, and you can restart if you want. Are you sure?"
+  utter_suggest_tasks:
+  - text: "Alright. Anything else?"
+  - text: "Ok. Can I help you with something else?"
+  - text: "Alright. Any other request?"
+  utter_general_info_kpop:
+  - text: "K-Pop stands for 'Korean popular music'. I love it very much and I can help you approach this surprising world!"
+  utter_general_info_bot:
+  - text: "I can tell you about the debut year, number of members, company and activity status of K-Pop groups. Otherwise I can suggest a K-Pop song."
+
+
+actions:
+- utter_out_of_scope
+- utter_welcome_greet
+- utter_ask_song_suggestion_form_group
+- utter_ask_group_info_form_group
+- utter_ask_random_song
+- utter_ask_song_energy
+- utter_ask_song_danceability
+- utter_ask_song_valence
+- utter_group_info_intro
+- utter_group_info_unknown
+- utter_group_info_debut
+- utter_group_info_members
+- utter_group_info_company
+- utter_group_info_activity
+- utter_submit
+- utter_submit_random
+- action_submit
+- utter_suggest_song
+- utter_default
+- utter_ending
+- validate_song_suggestion_form
+- validate_group_info_form
+- action_set_song_slots
+- action_fill_info_slots
+- action_suggest_song
+- utter_ask_continue
+- utter_suggest_tasks
+- utter_group_info_general
+- utter_list_groups
+- utter_general_info_kpop
+- utter_general_info_bot
+
+
+forms:
+  song_suggestion_form:
+    required_slots:
+    - group
+    - random_song
+    - song_valence
+    - song_energy
+    - song_danceability
+
+  group_info_form:
+    required_slots:
+    - group
+
+

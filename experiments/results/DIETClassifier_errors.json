@@ -1,0 +1,1537 @@
+[
+  {
+    "text": "give me one of their songs, also very danceable",
+    "entities": [
+      {
+        "start": 33,
+        "end": 47,
+        "value": "high danceability",
+        "entity": "song_danceability"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "song_energy",
+        "start": 28,
+        "end": 32,
+        "confidence_entity": 0.5265241265296936,
+        "value": "also",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "song_danceability",
+        "start": 33,
+        "end": 47,
+        "confidence_entity": 0.720812976360321,
+        "value": "high danceability",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "suggest a n.c.t. song to me",
+    "entities": [
+      {
+        "start": 10,
+        "end": 16,
+        "value": "NCT",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "suggest a neo culture technology song to me",
+    "entities": [
+      {
+        "start": 10,
+        "end": 32,
+        "value": "NCT",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "song_valence",
+        "start": 22,
+        "end": 32,
+        "confidence_entity": 0.5813385248184204,
+        "value": "technology",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "suggest a WayV song to me",
+    "entities": [
+      {
+        "start": 10,
+        "end": 14,
+        "value": "NCT",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "suggest a svt song to me",
+    "entities": [
+      {
+        "start": 10,
+        "end": 13,
+        "value": "Seventeen",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "I want to know something about itzy",
+    "entities": [
+      {
+        "start": 31,
+        "end": 35,
+        "value": "itzy",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "can you tell me something about lesserafim",
+    "entities": [
+      {
+        "start": 32,
+        "end": 42,
+        "value": "lesserafim",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "can you tell me something about kep1er",
+    "entities": [
+      {
+        "start": 32,
+        "end": 38,
+        "value": "kep1er",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "can you tell me something about monsta x",
+    "entities": [
+      {
+        "start": 32,
+        "end": 40,
+        "value": "monsta x",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "can you tell me something about the boyz",
+    "entities": [
+      {
+        "start": 32,
+        "end": 40,
+        "value": "the boyz",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "can you tell me something about day6",
+    "entities": [
+      {
+        "start": 32,
+        "end": 36,
+        "value": "day6",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "I want to know the agency of 17",
+    "entities": [
+      {
+        "start": 29,
+        "end": 31,
+        "value": "Seventeen",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "yes, make it calm sad and not very danceable",
+    "entities": [
+      {
+        "start": 13,
+        "end": 17,
+        "value": "low energy",
+        "entity": "song_energy"
+      },
+      {
+        "start": 18,
+        "end": 21,
+        "value": "low cheerfulness",
+        "entity": "song_valence"
+      },
+      {
+        "start": 26,
+        "end": 44,
+        "value": "low danceability",
+        "entity": "song_danceability"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "song_energy",
+        "start": 13,
+        "end": 21,
+        "confidence_entity": 0.4992953836917877,
+        "value": "calm sad",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "song_danceability",
+        "start": 26,
+        "end": 29,
+        "confidence_entity": 0.5011536478996277,
+        "value": "not",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "song_danceability",
+        "start": 30,
+        "end": 44,
+        "confidence_entity": 0.7288115620613098,
+        "value": "high danceability",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "give me a song please. I want it to be very happy",
+    "entities": [
+      {
+        "start": 39,
+        "end": 49,
+        "value": "high cheerfulness",
+        "entity": "song_valence"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "song_danceability",
+        "start": 39,
+        "end": 49,
+        "confidence_entity": 0.7769895195960999,
+        "value": "high cheerfulness",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "suggest a s. k. z. song to me",
+    "entities": [
+      {
+        "start": 10,
+        "end": 18,
+        "value": "Stray Kids",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "suggest a b.t.s. song to me",
+    "entities": [
+      {
+        "start": 10,
+        "end": 16,
+        "value": "BTS",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "suggest a s. v. t. song to me",
+    "entities": [
+      {
+        "start": 10,
+        "end": 18,
+        "value": "Seventeen",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "suggest a e. x. o. song to me",
+    "entities": [
+      {
+        "start": 10,
+        "end": 18,
+        "value": "EXO",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "can you tell me something about Girls generation",
+    "entities": [
+      {
+        "start": 32,
+        "end": 48,
+        "value": "Girls generation",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "can you tell me something about wanna one",
+    "entities": [
+      {
+        "start": 32,
+        "end": 41,
+        "value": "wanna one",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "can you tell me something about super junior",
+    "entities": [
+      {
+        "start": 32,
+        "end": 44,
+        "value": "super junior",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "group",
+        "start": 32,
+        "end": 37,
+        "confidence_entity": 0.9993208646774292,
+        "value": "super",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "can you tell me something about astro",
+    "entities": [
+      {
+        "start": 32,
+        "end": 37,
+        "value": "astro",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Are they active or not?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "song_valence",
+        "start": 19,
+        "end": 22,
+        "confidence_entity": 0.9071527123451233,
+        "value": "not",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "I want to listen to a cheerful and danceable song",
+    "entities": [
+      {
+        "start": 22,
+        "end": 30,
+        "value": "high cheerfulness",
+        "entity": "song_valence"
+      },
+      {
+        "start": 35,
+        "end": 44,
+        "value": "high danceability",
+        "entity": "song_danceability"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "song_valence",
+        "start": 20,
+        "end": 30,
+        "confidence_entity": 0.6601371765136719,
+        "value": "a cheerful",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "song_danceability",
+        "start": 35,
+        "end": 44,
+        "confidence_entity": 0.8504691123962402,
+        "value": "high danceability",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "find a not sad not calm a bit danceable k-pop song for me",
+    "entities": [
+      {
+        "start": 7,
+        "end": 14,
+        "value": "not sad",
+        "entity": "song_valence"
+      },
+      {
+        "start": 15,
+        "end": 23,
+        "value": "not calm",
+        "entity": "song_energy"
+      },
+      {
+        "start": 24,
+        "end": 39,
+        "value": "a bit danceable",
+        "entity": "song_danceability"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "song_valence",
+        "start": 7,
+        "end": 14,
+        "confidence_entity": 0.9822873473167419,
+        "value": "high cheerfulness",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "song_energy",
+        "start": 15,
+        "end": 23,
+        "confidence_entity": 0.7318918704986572,
+        "value": "high energy",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "song_energy",
+        "start": 24,
+        "end": 39,
+        "confidence_entity": 0.7479628920555115,
+        "value": "medium danceability",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "please suggest a not too sad not too calm just a bit danceable k-pop song",
+    "entities": [
+      {
+        "start": 17,
+        "end": 28,
+        "value": "not too sad",
+        "entity": "song_valence"
+      },
+      {
+        "start": 29,
+        "end": 41,
+        "value": "not too calm",
+        "entity": "song_energy"
+      },
+      {
+        "start": 42,
+        "end": 62,
+        "value": "just a bit danceable",
+        "entity": "song_danceability"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "song_valence",
+        "start": 17,
+        "end": 28,
+        "confidence_entity": 0.34919294714927673,
+        "value": "high cheerfulness",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "song_energy",
+        "start": 29,
+        "end": 41,
+        "confidence_entity": 0.568801999092102,
+        "value": "high energy",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "song_danceability",
+        "start": 42,
+        "end": 46,
+        "confidence_entity": 0.6064732074737549,
+        "value": "just",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "song_energy",
+        "start": 49,
+        "end": 62,
+        "confidence_entity": 0.6540684700012207,
+        "value": "bit danceable",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "find a a bit cheerful not very calm not much danceable k-pop song for me",
+    "entities": [
+      {
+        "start": 7,
+        "end": 21,
+        "value": "a bit cheerful",
+        "entity": "song_valence"
+      },
+      {
+        "start": 22,
+        "end": 35,
+        "value": "not very calm",
+        "entity": "song_energy"
+      },
+      {
+        "start": 36,
+        "end": 54,
+        "value": "not much danceable",
+        "entity": "song_danceability"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "song_valence",
+        "start": 9,
+        "end": 21,
+        "confidence_entity": 0.5340022444725037,
+        "value": "bit cheerful",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "song_energy",
+        "start": 22,
+        "end": 25,
+        "confidence_entity": 0.7879672646522522,
+        "value": "not",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "song_energy",
+        "start": 26,
+        "end": 35,
+        "confidence_entity": 0.66,
+        "value": "low energy",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "song_danceability",
+        "start": 36,
+        "end": 54,
+        "confidence_entity": 0.77,
+        "value": "low danceability",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "find a a bit sad just a bit energetic not very danceable k-pop song for me",
+    "entities": [
+      {
+        "start": 7,
+        "end": 16,
+        "value": "a bit sad",
+        "entity": "song_valence"
+      },
+      {
+        "start": 17,
+        "end": 37,
+        "value": "just a bit energetic",
+        "entity": "song_energy"
+      },
+      {
+        "start": 38,
+        "end": 56,
+        "value": "not very danceable",
+        "entity": "song_danceability"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "song_valence",
+        "start": 9,
+        "end": 16,
+        "confidence_entity": 0.9557797312736511,
+        "value": "bit sad",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "song_energy",
+        "start": 17,
+        "end": 21,
+        "confidence_entity": 0.4766346514225006,
+        "value": "just",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "song_energy",
+        "start": 22,
+        "end": 37,
+        "confidence_entity": 0.7766876816749573,
+        "value": "medium energy",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "song_danceability",
+        "start": 38,
+        "end": 41,
+        "confidence_entity": 0.8850327134132385,
+        "value": "not",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "song_danceability",
+        "start": 42,
+        "end": 56,
+        "confidence_entity": 0.8287176489830017,
+        "value": "high danceability",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "help me find a not too cheerful not much energetic song by NCT",
+    "entities": [
+      {
+        "start": 15,
+        "end": 31,
+        "value": "not too cheerful",
+        "entity": "song_valence"
+      },
+      {
+        "start": 32,
+        "end": 50,
+        "value": "not much energetic",
+        "entity": "song_energy"
+      },
+      {
+        "start": 59,
+        "end": 62,
+        "value": "NCT",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "song_energy",
+        "start": 15,
+        "end": 31,
+        "confidence_entity": 0.72,
+        "value": "low cheerfulness",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "song_energy",
+        "start": 32,
+        "end": 50,
+        "confidence_entity": 0.9707794189453125,
+        "value": "low energy",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "group",
+        "start": 59,
+        "end": 62,
+        "confidence_entity": 0.9863665699958801,
+        "value": "NCT",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Help me find a k-pop song with [high danceability], please",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "song_danceability",
+        "start": 32,
+        "end": 49,
+        "confidence_entity": 0.983881950378418,
+        "value": "high danceability",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "suggest a s.k.z. song. I want it happy, calm and with low danceability",
+    "entities": [
+      {
+        "start": 10,
+        "end": 16,
+        "value": "Stray Kids",
+        "entity": "group"
+      },
+      {
+        "start": 33,
+        "end": 38,
+        "value": "happy",
+        "entity": "song_valence"
+      },
+      {
+        "start": 40,
+        "end": 44,
+        "value": "calm",
+        "entity": "song_energy"
+      },
+      {
+        "start": 54,
+        "end": 70,
+        "value": "low danceability",
+        "entity": "song_danceability"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "song_valence",
+        "start": 33,
+        "end": 38,
+        "confidence_entity": 0.978358268737793,
+        "value": "high cheerfulness",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "song_energy",
+        "start": 40,
+        "end": 44,
+        "confidence_entity": 0.8181973099708557,
+        "value": "low energy",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "song_danceability",
+        "start": 54,
+        "end": 70,
+        "confidence_entity": 0.9917136430740356,
+        "value": "low danceability",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "can you tell me a bit about n.c.t.",
+    "entities": [
+      {
+        "start": 28,
+        "end": 34,
+        "value": "NCT",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "song_valence",
+        "start": 18,
+        "end": 21,
+        "confidence_entity": 0.8763765692710876,
+        "value": "bit",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "no thanks but can you tell me a bit about n.c.t.",
+    "entities": [
+      {
+        "start": 42,
+        "end": 48,
+        "value": "NCT",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "song_energy",
+        "start": 30,
+        "end": 35,
+        "confidence_entity": 0.5349456667900085,
+        "value": "a bit",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "can you tell me something about ikon",
+    "entities": [
+      {
+        "start": 32,
+        "end": 36,
+        "value": "ikon",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "How many members do p. 1 harmony have?",
+    "entities": [
+      {
+        "start": 20,
+        "end": 32,
+        "value": "p. 1 harmony",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "group",
+        "start": 23,
+        "end": 24,
+        "confidence_entity": 0.5746008157730103,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "What is e.x.o. agency please?",
+    "entities": [
+      {
+        "start": 8,
+        "end": 14,
+        "value": "EXO",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "do you know what does skz mean?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "group",
+        "start": 22,
+        "end": 25,
+        "confidence_entity": 0.8045571446418762,
+        "value": "Stray Kids",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "what are the things you can do exactly",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "group",
+        "start": 31,
+        "end": 38,
+        "confidence_entity": 0.5944133400917053,
+        "value": "exactly",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "I want to listen to a quite cheerful and not too energetic song",
+    "entities": [
+      {
+        "start": 22,
+        "end": 36,
+        "value": "high cheerfulness",
+        "entity": "song_valence"
+      },
+      {
+        "start": 41,
+        "end": 58,
+        "value": "low energy",
+        "entity": "song_energy"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "song_valence",
+        "start": 28,
+        "end": 36,
+        "confidence_entity": 0.9955845475196838,
+        "value": "high cheerfulness",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "song_valence",
+        "start": 41,
+        "end": 58,
+        "confidence_entity": 0.79,
+        "value": "low energy",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Give me a very cheerful energetic danceable k-pop song",
+    "entities": [
+      {
+        "start": 10,
+        "end": 23,
+        "value": "very cheerful",
+        "entity": "song_valence"
+      },
+      {
+        "start": 24,
+        "end": 33,
+        "value": "energetic",
+        "entity": "song_energy"
+      },
+      {
+        "start": 34,
+        "end": 43,
+        "value": "danceable",
+        "entity": "song_danceability"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "song_valence",
+        "start": 10,
+        "end": 43,
+        "confidence_entity": 0.6423354148864746,
+        "value": "very cheerful energetic danceable",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "find a very happy very energetic very danceable k-pop song for me",
+    "entities": [
+      {
+        "start": 7,
+        "end": 17,
+        "value": "very happy",
+        "entity": "song_valence"
+      },
+      {
+        "start": 18,
+        "end": 32,
+        "value": "very energetic",
+        "entity": "song_energy"
+      },
+      {
+        "start": 33,
+        "end": 47,
+        "value": "very danceable",
+        "entity": "song_danceability"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "song_valence",
+        "start": 7,
+        "end": 47,
+        "confidence_entity": 0.6322148442268372,
+        "value": "very happy very energetic very danceable",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Give me a just a bit happy a bit energetic not so danceable song by Blackpink",
+    "entities": [
+      {
+        "start": 10,
+        "end": 26,
+        "value": "just a bit happy",
+        "entity": "song_valence"
+      },
+      {
+        "start": 27,
+        "end": 42,
+        "value": "a bit energetic",
+        "entity": "song_energy"
+      },
+      {
+        "start": 43,
+        "end": 59,
+        "value": "not so danceable",
+        "entity": "song_danceability"
+      },
+      {
+        "start": 68,
+        "end": 77,
+        "value": "Blackpink",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "song_valence",
+        "start": 10,
+        "end": 14,
+        "confidence_entity": 0.6402164697647095,
+        "value": "just",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "song_valence",
+        "start": 15,
+        "end": 42,
+        "confidence_entity": 0.8417918086051941,
+        "value": "a bit happy a bit energetic",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "song_danceability",
+        "start": 43,
+        "end": 59,
+        "confidence_entity": 0.5547924041748047,
+        "value": "low danceability",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "group",
+        "start": 68,
+        "end": 77,
+        "confidence_entity": 0.9960736036300659,
+        "value": "Blackpink",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "suggest a b. t. s. song to me",
+    "entities": [
+      {
+        "start": 10,
+        "end": 18,
+        "value": "BTS",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "suggest a bp song to me",
+    "entities": [
+      {
+        "start": 10,
+        "end": 12,
+        "value": "Blackpink",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "suggest a Bp song to me",
+    "entities": [
+      {
+        "start": 10,
+        "end": 12,
+        "value": "Blackpink",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "suggest a t.x.t. song to me",
+    "entities": [
+      {
+        "start": 10,
+        "end": 16,
+        "value": "TXT",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "suggest a t. x. t. song to me",
+    "entities": [
+      {
+        "start": 10,
+        "end": 18,
+        "value": "TXT",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "suggest a TOMORROW X TOGETHER song to me",
+    "entities": [
+      {
+        "start": 10,
+        "end": 29,
+        "value": "TXT",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "group",
+        "start": 10,
+        "end": 18,
+        "confidence_entity": 0.999494194984436,
+        "value": "TOMORROW",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "group",
+        "start": 21,
+        "end": 29,
+        "confidence_entity": 0.9991496801376343,
+        "value": "TOGETHER",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "maybe twice",
+    "entities": [
+      {
+        "start": 6,
+        "end": 11,
+        "value": "twice",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "can you tell me something about (g)i-dle",
+    "entities": [
+      {
+        "start": 32,
+        "end": 40,
+        "value": "(g)i-dle",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "can you tell me something about big Bang",
+    "entities": [
+      {
+        "start": 32,
+        "end": 41,
+        "value": "big Bang ",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "can you tell me something about treasure",
+    "entities": [
+      {
+        "start": 32,
+        "end": 40,
+        "value": "treasure",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "can you tell me anything you said",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "group",
+        "start": 29,
+        "end": 33,
+        "confidence_entity": 0.5365660786628723,
+        "value": "said",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "what is tomorrow by together debut date",
+    "entities": [
+      {
+        "start": 8,
+        "end": 28,
+        "value": "TXT",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "group",
+        "start": 8,
+        "end": 28,
+        "confidence_entity": 0.9972962737083435,
+        "value": "TXT",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "group",
+        "start": 35,
+        "end": 39,
+        "confidence_entity": 0.566257894039154,
+        "value": "date",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Are skz still active?",
+    "entities": [
+      {
+        "start": 4,
+        "end": 7,
+        "value": "Stray Kids",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "why are they called seventeen?",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "group",
+        "start": 20,
+        "end": 29,
+        "confidence_entity": 0.9998816251754761,
+        "value": "Seventeen",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "something in between",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "group",
+        "start": 13,
+        "end": 20,
+        "confidence_entity": 0.8335550427436829,
+        "value": "between",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Actually i want to modify cheerfulness level",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "song_valence",
+        "start": 26,
+        "end": 38,
+        "confidence_entity": 0.5323629975318909,
+        "value": "cheerfulness",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Actually i want to change energy",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "song_energy",
+        "start": 26,
+        "end": 32,
+        "confidence_entity": 0.9882569909095764,
+        "value": "energy",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "give me general info about k-pop",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "group",
+        "start": 8,
+        "end": 15,
+        "confidence_entity": 0.7782207727432251,
+        "value": "general",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "find a not so sad not so calm little danceable k-pop song for me",
+    "entities": [
+      {
+        "start": 7,
+        "end": 17,
+        "value": "not so sad",
+        "entity": "song_valence"
+      },
+      {
+        "start": 18,
+        "end": 29,
+        "value": "not so calm",
+        "entity": "song_energy"
+      },
+      {
+        "start": 30,
+        "end": 46,
+        "value": "little danceable",
+        "entity": "song_danceability"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "song_valence",
+        "start": 7,
+        "end": 17,
+        "confidence_entity": 0.8,
+        "value": "high cheerfulness",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "song_danceability",
+        "start": 18,
+        "end": 29,
+        "confidence_entity": 0.5035696625709534,
+        "value": "high energy",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "song_danceability",
+        "start": 30,
+        "end": 46,
+        "confidence_entity": 0.66,
+        "value": "low danceability",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Suggest a Blackpink song that is not too sad please",
+    "entities": [
+      {
+        "start": 10,
+        "end": 19,
+        "value": "Blackpink",
+        "entity": "group"
+      },
+      {
+        "start": 33,
+        "end": 44,
+        "value": "high cheerfulness",
+        "entity": "song_valence"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "group",
+        "start": 10,
+        "end": 19,
+        "confidence_entity": 0.9995773434638977,
+        "value": "Blackpink",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "song_energy",
+        "start": 33,
+        "end": 44,
+        "confidence_entity": 0.75,
+        "value": "high cheerfulness",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "suggest a n. c. t. song to me",
+    "entities": [
+      {
+        "start": 10,
+        "end": 18,
+        "value": "NCT",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "suggest a b.p. song to me",
+    "entities": [
+      {
+        "start": 10,
+        "end": 14,
+        "value": "Blackpink",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "suggest a 17 song to me",
+    "entities": [
+      {
+        "start": 10,
+        "end": 12,
+        "value": "Seventeen",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "suggest a tomorrow by together song to me",
+    "entities": [
+      {
+        "start": 10,
+        "end": 30,
+        "value": "TXT",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "song_valence",
+        "start": 8,
+        "end": 9,
+        "confidence_entity": 0.883964478969574,
+        "value": "a",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "group",
+        "start": 10,
+        "end": 30,
+        "confidence_entity": 0.9951712489128113,
+        "value": "TXT",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "please tell me about s.k.z.",
+    "entities": [
+      {
+        "start": 21,
+        "end": 27,
+        "value": "Stray Kids",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  }
+]

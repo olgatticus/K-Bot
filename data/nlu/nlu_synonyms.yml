@@ -1,0 +1,211 @@
+version: "3.1"
+nlu:
+- lookup: group
+  examples: |
+    - BTS
+    - NCT
+    - Stray Kids
+    - Seventeen
+    - TXT
+    - Blackpink
+    - EXO
+    - aespa
+    - Itzy
+    - Twice
+    - Mamamoo
+    - Loona
+    - Red Velvet
+    - (g)i-dle
+    - GOT
+    - Girls generation 
+    - NewJeans 
+    - Le Sserafim
+    - Kep1er
+    - Wanna One
+    - GOT7
+    - Enhypen
+    - P1harmony
+    - Monsta x 
+    - Ateez
+    - Super junior
+    - Big Bang 
+    - SuperM
+    - iKon
+    - SHINee
+    - Pentagon
+    - Treasure 
+    - 2PM
+    - Oneus 
+    - SF9
+    - Astro
+    - TVXQ
+    - Winner
+    - The Boyz
+    - Day6
+    - BtoB
+
+- lookup: song_valence
+  examples: |
+    - high cheerfulness
+    - low cheerfulness
+    - medium cheerfulness
+
+- lookup: song_energy
+  examples: |
+    - high energy
+    - low energy
+    - medium energy
+
+- lookup: song_danceability
+  examples: |
+    - high danceability
+    - low danceability
+    - medium danceability
+
+- synonym: high cheerfulness
+  examples: |
+    - happy
+    - very cheerful
+    - highly cheerful
+    - very happy
+    - not sad
+    - not too sad
+    - little sad
+    - not much sad
+    - not so sad
+    - not very sad
+
+- synonym: medium cheerfulness
+  examples: |
+    - a bit cheerful
+    - just a bit happy
+    - a bit sad
+
+- synonym: low cheerfulness
+  examples: |
+    - sad
+    - very sad
+    - highly sad
+    - not cheerful
+    - not happy
+    - not too happy
+    - not too cheerful
+    - little cheerful
+    - not much happy
+    - not so happy
+    - not very happy
+
+- synonym: high energy
+  examples: |
+    - energetic
+    - very energetic
+    - highly energetic
+    - not calm
+    - not too calm
+    - little calm
+    - not much calm
+    - not so calm
+    - not very calm
+
+- synonym: medium energy
+  examples: |
+    - a bit energetic
+    - just a bit energetic
+    - a bit calm
+
+- synonym: low energy
+  examples: |
+    - calm
+    - very calm
+    - highly calm
+    - not energetic
+    - not too energetic
+    - little energetic
+    - not much energetic
+    - not so energetic
+    - not very energetic
+
+- synonym: high danceability
+  examples: |
+    - danceable
+    - very danceable
+    - highly danceable
+
+- synonym: medium danceability
+  examples: |
+    - a bit danceable
+    - just a bit danceable
+
+- synonym: low danceability
+  examples: |
+    - not danceable
+    - not too danceable
+    - little danceable
+    - not much danceable
+    - not so danceable
+    - not very danceable
+
+- synonym: BTS
+  examples: |
+    - bts
+    - b.t.s.
+    - b. t. s. 
+    - Bts
+    - bangtan sonyeondan
+
+- synonym: NCT
+  examples: |
+    - nct
+    - n. c. t.
+    - n.c.t.
+    - Nct
+    - neo culture technology
+    - WayV
+    - Nct 127 
+    - NCT127
+    - Nct Dream
+    - NCT DREAM
+    - Nct U
+
+- synonym: Stray Kids
+  examples: |
+    - stray kids
+    - skz
+    - SKZ
+    - s.k.z.
+    - stray
+    - Stray Kids
+
+- synonym: Blackpink
+  examples: |
+    - black pink
+    - Black Pink
+    - b.p.
+    - bp
+    - Bp
+    - blackpink 
+
+- synonym: Seventeen
+  examples: |
+    - seventeen
+    - SEVENTEEN
+    - 17
+    - svt
+    - s. v. t.
+    - seven teen
+
+- synonym: TXT
+  examples: |
+    - t.x.t.
+    - t. x. t.
+    - txt
+    - tomorrow x together
+    - tomorrow by together
+    - TOMORROW X TOGETHER
+
+- synonym: EXO
+  examples: |
+    - Exo
+    - exo
+    - e. x. o.
+

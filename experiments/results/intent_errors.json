@@ -1,0 +1,554 @@
+[
+  {
+    "text": "long time no see",
+    "intent": "welcome_greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.6760821342468262
+    }
+  },
+  {
+    "text": "Give me a EXO song",
+    "intent": "request_song_suggestion_form",
+    "intent_prediction": {
+      "name": "inform_group",
+      "confidence": 0.53505539894104
+    }
+  },
+  {
+    "text": "good",
+    "intent": "response_positive",
+    "intent_prediction": {
+      "name": "response_neutral",
+      "confidence": 0.7257819175720215
+    }
+  },
+  {
+    "text": "yeah all is good",
+    "intent": "response_positive",
+    "intent_prediction": {
+      "name": "response_neutral",
+      "confidence": 0.8480513691902161
+    }
+  },
+  {
+    "text": "Yes I have some preferences",
+    "intent": "response_positive",
+    "intent_prediction": {
+      "name": "response_neutral",
+      "confidence": 0.9362883567810059
+    }
+  },
+  {
+    "text": "nice",
+    "intent": "response_positive",
+    "intent_prediction": {
+      "name": "inform_group",
+      "confidence": 0.17976026237010956
+    }
+  },
+  {
+    "text": "just a bit",
+    "intent": "response_middle",
+    "intent_prediction": {
+      "name": "response_negative",
+      "confidence": 0.8380544781684875
+    }
+  },
+  {
+    "text": "neutral",
+    "intent": "response_middle",
+    "intent_prediction": {
+      "name": "response_negative",
+      "confidence": 0.1890197992324829
+    }
+  },
+  {
+    "text": "idk",
+    "intent": "response_neutral",
+    "intent_prediction": {
+      "name": "response_positive",
+      "confidence": 0.6290133595466614
+    }
+  },
+  {
+    "text": "everything is ok for me",
+    "intent": "response_neutral",
+    "intent_prediction": {
+      "name": "group_info_general",
+      "confidence": 0.8414201736450195
+    }
+  },
+  {
+    "text": "Talk to you later",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "response_positive",
+      "confidence": 0.5549802780151367
+    }
+  },
+  {
+    "text": "do you have shoes",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "response_neutral",
+      "confidence": 0.689937949180603
+    }
+  },
+  {
+    "text": "do you have a sister",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "response_neutral",
+      "confidence": 0.6094215512275696
+    }
+  },
+  {
+    "text": "can you make coffee",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "request_group_info_form",
+      "confidence": 0.13605041801929474
+    }
+  },
+  {
+    "text": "greetings",
+    "intent": "welcome_greet",
+    "intent_prediction": {
+      "name": "request_song_suggestion_form",
+      "confidence": 0.2719765901565552
+    }
+  },
+  {
+    "text": "tell me about their debut",
+    "intent": "group_info_debut",
+    "intent_prediction": {
+      "name": "group_info_debut+group_info_unknown",
+      "confidence": 0.4582388699054718
+    }
+  },
+  {
+    "text": "Are they active or not?",
+    "intent": "group_info_activity",
+    "intent_prediction": {
+      "name": "group_info_members+group_info_activity",
+      "confidence": 0.47020506858825684
+    }
+  },
+  {
+    "text": "When is the next comeback?",
+    "intent": "group_info_unknown",
+    "intent_prediction": {
+      "name": "group_info_members+group_info_unknown",
+      "confidence": 0.333052396774292
+    }
+  },
+  {
+    "text": "no, just give me a song",
+    "intent": "response_negative",
+    "intent_prediction": {
+      "name": "request_song_suggestion_form",
+      "confidence": 0.9999995231628418
+    }
+  },
+  {
+    "text": "higly",
+    "intent": "response_positive",
+    "intent_prediction": {
+      "name": "welcome_greet",
+      "confidence": 0.3883669376373291
+    }
+  },
+  {
+    "text": "I want a calm and sad one",
+    "intent": "inform_song",
+    "intent_prediction": {
+      "name": "request_song_suggestion_form",
+      "confidence": 0.999950647354126
+    }
+  },
+  {
+    "text": "dunno",
+    "intent": "response_neutral",
+    "intent_prediction": {
+      "name": "response_negative",
+      "confidence": 0.8149964809417725
+    }
+  },
+  {
+    "text": "anything would be good",
+    "intent": "response_neutral",
+    "intent_prediction": {
+      "name": "response_positive",
+      "confidence": 0.4180980920791626
+    }
+  },
+  {
+    "text": "restart please",
+    "intent": "stop",
+    "intent_prediction": {
+      "name": "welcome_greet",
+      "confidence": 0.5437828302383423
+    }
+  },
+  {
+    "text": "I am fine",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "request_song_suggestion_form",
+      "confidence": 0.9228416085243225
+    }
+  },
+  {
+    "text": "give me the directions to time square",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "request_song_suggestion_form",
+      "confidence": 0.18462131917476654
+    }
+  },
+  {
+    "text": "what languages do you speak",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "general_info_bot",
+      "confidence": 0.3694402873516083
+    }
+  },
+  {
+    "text": "tell me about your functionalities",
+    "intent": "general_info_bot",
+    "intent_prediction": {
+      "name": "request_group_info_form",
+      "confidence": 0.6514785885810852
+    }
+  },
+  {
+    "text": "tell me anything you know about 17",
+    "intent": "request_group_info_form",
+    "intent_prediction": {
+      "name": "group_info_general",
+      "confidence": 0.6336285471916199
+    }
+  },
+  {
+    "text": "any kind of information you know about them",
+    "intent": "group_info_general",
+    "intent_prediction": {
+      "name": "request_group_info_form",
+      "confidence": 0.862876832485199
+    }
+  },
+  {
+    "text": "what's their debut song?",
+    "intent": "group_info_unknown",
+    "intent_prediction": {
+      "name": "group_info_debut",
+      "confidence": 0.4668993651866913
+    }
+  },
+  {
+    "text": "who are those members",
+    "intent": "group_info_unknown",
+    "intent_prediction": {
+      "name": "group_info_members+group_info_unknown",
+      "confidence": 0.5783243775367737
+    }
+  },
+  {
+    "text": "I would prefer not",
+    "intent": "response_negative",
+    "intent_prediction": {
+      "name": "inform_group",
+      "confidence": 0.3838788866996765
+    }
+  },
+  {
+    "text": "low",
+    "intent": "response_negative",
+    "intent_prediction": {
+      "name": "response_positive",
+      "confidence": 0.6670388579368591
+    }
+  },
+  {
+    "text": "yep",
+    "intent": "response_positive",
+    "intent_prediction": {
+      "name": "inform_group",
+      "confidence": 0.6035705804824829
+    }
+  },
+  {
+    "text": "yes tell me",
+    "intent": "response_positive",
+    "intent_prediction": {
+      "name": "group_info_general",
+      "confidence": 0.3074788749217987
+    }
+  },
+  {
+    "text": "yes, cheerful",
+    "intent": "inform_song",
+    "intent_prediction": {
+      "name": "response_positive",
+      "confidence": 0.8904470801353455
+    }
+  },
+  {
+    "text": "no I don't have preferences",
+    "intent": "response_neutral",
+    "intent_prediction": {
+      "name": "response_negative",
+      "confidence": 0.43653973937034607
+    }
+  },
+  {
+    "text": "I don't have preferences",
+    "intent": "response_neutral",
+    "intent_prediction": {
+      "name": "response_positive",
+      "confidence": 0.9561333060264587
+    }
+  },
+  {
+    "text": "See you",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "welcome_greet",
+      "confidence": 0.6815506219863892
+    }
+  },
+  {
+    "text": "are you real",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "group_info_general",
+      "confidence": 0.33940863609313965
+    }
+  },
+  {
+    "text": "activity and company of the group",
+    "intent": "group_info_company+group_info_activity",
+    "intent_prediction": {
+      "name": "group_info_activity+group_info_members+group_info_company",
+      "confidence": 0.5789041519165039
+    }
+  },
+  {
+    "text": "/start",
+    "intent": "welcome_greet",
+    "intent_prediction": {
+      "name": "start",
+      "confidence": 1.0
+    }
+  },
+  {
+    "text": "I want a calm and sad song",
+    "intent": "request_song_suggestion_form",
+    "intent_prediction": {
+      "name": "inform_song",
+      "confidence": 0.8955188393592834
+    }
+  },
+  {
+    "text": "maybe twice",
+    "intent": "inform_group",
+    "intent_prediction": {
+      "name": "response_positive",
+      "confidence": 0.8104208707809448
+    }
+  },
+  {
+    "text": "let's do bts then",
+    "intent": "inform_group",
+    "intent_prediction": {
+      "name": "group_info_unknown",
+      "confidence": 0.20371466875076294
+    }
+  },
+  {
+    "text": "can you tell me anything you said",
+    "intent": "group_info_general",
+    "intent_prediction": {
+      "name": "request_group_info_form",
+      "confidence": 0.8642791509628296
+    }
+  },
+  {
+    "text": "why are they called seventeen?",
+    "intent": "group_info_unknown",
+    "intent_prediction": {
+      "name": "inform_group",
+      "confidence": 0.2752772867679596
+    }
+  },
+  {
+    "text": "yes, energetic",
+    "intent": "inform_song",
+    "intent_prediction": {
+      "name": "request_song_suggestion_form",
+      "confidence": 0.9999679327011108
+    }
+  },
+  {
+    "text": "I want it to be of medium energy and low danceability",
+    "intent": "inform_song",
+    "intent_prediction": {
+      "name": "request_song_suggestion_form",
+      "confidence": 0.9956166744232178
+    }
+  },
+  {
+    "text": "something in between",
+    "intent": "response_middle",
+    "intent_prediction": {
+      "name": "request_group_info_form",
+      "confidence": 0.969764769077301
+    }
+  },
+  {
+    "text": "Actually i want to change energy",
+    "intent": "stop",
+    "intent_prediction": {
+      "name": "request_song_suggestion_form",
+      "confidence": 0.999953031539917
+    }
+  },
+  {
+    "text": "Who's the US President?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "group_info_general",
+      "confidence": 0.8188339471817017
+    }
+  },
+  {
+    "text": "what is your name",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "group_info_unknown",
+      "confidence": 0.4715661406517029
+    }
+  },
+  {
+    "text": "among which can I choose",
+    "intent": "request_list_groups",
+    "intent_prediction": {
+      "name": "group_info_company+group_info_unknown",
+      "confidence": 0.2966867685317993
+    }
+  },
+  {
+    "text": "give me general info about k-pop",
+    "intent": "general_info_kpop",
+    "intent_prediction": {
+      "name": "request_song_suggestion_form",
+      "confidence": 0.9860055446624756
+    }
+  },
+  {
+    "text": "I don't know what to ask",
+    "intent": "general_info_bot",
+    "intent_prediction": {
+      "name": "group_info_general",
+      "confidence": 0.48920124769210815
+    }
+  },
+  {
+    "text": "ciao",
+    "intent": "welcome_greet",
+    "intent_prediction": {
+      "name": "response_positive",
+      "confidence": 0.34866026043891907
+    }
+  },
+  {
+    "text": "yes, Stray Kids",
+    "intent": "inform_group",
+    "intent_prediction": {
+      "name": "response_positive",
+      "confidence": 0.5204871296882629
+    }
+  },
+  {
+    "text": "a EXO song",
+    "intent": "inform_group",
+    "intent_prediction": {
+      "name": "request_song_suggestion_form",
+      "confidence": 0.9504420161247253
+    }
+  },
+  {
+    "text": "please tell me about s.k.z.",
+    "intent": "request_group_info_form",
+    "intent_prediction": {
+      "name": "request_song_suggestion_form",
+      "confidence": 0.4734027087688446
+    }
+  },
+  {
+    "text": "no but who are nct",
+    "intent": "group_info_general",
+    "intent_prediction": {
+      "name": "request_group_info_form",
+      "confidence": 0.45095935463905334
+    }
+  },
+  {
+    "text": "no, I don't know anything",
+    "intent": "response_negative",
+    "intent_prediction": {
+      "name": "response_neutral",
+      "confidence": 0.48465901613235474
+    }
+  },
+  {
+    "text": "that would be ok",
+    "intent": "response_positive",
+    "intent_prediction": {
+      "name": "response_neutral",
+      "confidence": 0.7775630354881287
+    }
+  },
+  {
+    "text": "yes, not happy and of high danceability",
+    "intent": "inform_song",
+    "intent_prediction": {
+      "name": "request_song_suggestion_form",
+      "confidence": 0.5744985938072205
+    }
+  },
+  {
+    "text": "book a flight from milan to ny",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "response_positive",
+      "confidence": 0.3684471845626831
+    }
+  },
+  {
+    "text": "what is the reason for this",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "response_neutral",
+      "confidence": 0.2863336205482483
+    }
+  },
+  {
+    "text": "tell me something about k pop",
+    "intent": "general_info_kpop",
+    "intent_prediction": {
+      "name": "request_group_info_form",
+      "confidence": 0.9742912650108337
+    }
+  },
+  {
+    "text": "whats the debut year? and how many members is the group composed of",
+    "intent": "group_info_debut+group_info_members",
+    "intent_prediction": {
+      "name": "group_info_members+group_info_debut+group_info_company",
+      "confidence": 0.4676128923892975
+    }
+  }
+]

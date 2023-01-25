@@ -1,0 +1,1044 @@
+version: "3.1"
+stories:
+
+- story: Greeting 1
+  steps:
+  - intent: welcome_greet
+  - action: utter_welcome_greet
+  - checkpoint: start_ask_group_info
+
+- story: Greeting 2
+  steps:
+  - intent: welcome_greet
+  - action: utter_welcome_greet
+  - checkpoint: start_song_suggestion
+
+- story: Start of conversation of confused user 1
+  steps:
+  - intent: welcome_greet
+  - action: utter_welcome_greet
+  - intent: general_info_kpop
+  - action: utter_general_info_kpop
+  - intent: response_positive
+  - action: utter_general_info_bot
+
+- story: Start of conversation of confused user 2
+  steps:
+  - intent: welcome_greet
+  - action: utter_welcome_greet
+  - intent: general_info_bot
+  - action: utter_general_info_bot
+  - intent: general_info_kpop
+  - action: utter_general_info_kpop
+  - intent: response_positive
+  - action: utter_suggest_tasks
+
+- story: Ask for random song suggestion
+  steps:
+  - checkpoint: start_song_suggestion
+  - intent: request_song_suggestion_form
+  - action: action_set_song_slots
+  - action: song_suggestion_form
+  - active_loop: song_suggestion_form
+  - slot_was_set:
+    - requested_slot: group
+  - slot_was_set:
+    - group: NCT
+  - slot_was_set:
+    - requested_slot: random_song
+  - slot_was_set:
+    - random_song: True
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_submit
+  - action: action_suggest_song
+  - checkpoint: propose_group_info
+
+- story: Unhappy path - ask for random song suggestion, interrupt to ask info
+  steps:
+  - checkpoint: start_song_suggestion
+  - intent: request_song_suggestion_form
+  - action: action_set_song_slots
+  - action: song_suggestion_form
+  - active_loop: song_suggestion_form
+  - slot_was_set:
+    - requested_slot: group
+  - slot_was_set:
+    - group: Blackpink
+  - slot_was_set:
+    - requested_slot: random_song
+  - intent: group_info_debut
+  - action: action_fill_info_slots
+  - action: utter_group_info_debut
+  - action: song_suggestion_form
+  - slot_was_set:
+    - requested_slot: random_song
+  - slot_was_set:
+    - random_song: True
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_submit
+  - action: action_suggest_song
+  - checkpoint: propose_group_info
+
+- story: User tells wrong groups
+  steps:
+  - intent: request_song_suggestion_form
+  - action: action_set_song_slots
+  - action: song_suggestion_form
+  - active_loop: song_suggestion_form
+  - slot_was_set:
+    - group: null
+  - slot_was_set:
+    - requested_slot: group
+  - action: action_listen
+  - intent: response_positive
+#  - slot_was_set:
+#    - group: null
+  - action: utter_list_groups
+  - intent: inform_group
+  - slot_was_set:
+    - group: TXT
+  - slot_was_set:
+    - requested_slot: random_song
+  - slot_was_set:
+    - random_song: True
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_submit
+  - action: action_suggest_song
+  - checkpoint: propose_group_info
+
+- story: Ask for constrained song suggestion
+  steps:
+  - checkpoint: start_song_suggestion
+  - intent: request_song_suggestion_form
+  - action: action_set_song_slots
+  - action: song_suggestion_form
+  - active_loop: song_suggestion_form
+  - slot_was_set:
+    - requested_slot: group
+  - slot_was_set:
+    - group: NCT
+  - slot_was_set:
+    - requested_slot: random_song
+  - slot_was_set:
+    - random_song: False
+  - slot_was_set:
+    - requested_slot: song_valence
+  - slot_was_set:
+    - song_valence: low
+  - slot_was_set:
+    - requested_slot: song_energy
+  - slot_was_set:
+    - song_valence: high
+  - slot_was_set:
+    - requested_slot: song_danceability
+  - slot_was_set:
+    - song_valence: high
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_submit
+  - action: action_suggest_song
+  - checkpoint: propose_group_info
+
+- story: User interrupts the song suggestion but then changes their mind
+  steps:
+  - intent: welcome_greet
+  - action: utter_welcome_greet
+  - intent: request_song_suggestion_form
+  - action: action_set_song_slots
+  - action: song_suggestion_form
+  - active_loop: song_suggestion_form
+  - slot_was_set:
+    - requested_slot: group
+  - slot_was_set:
+    - group: Seventeen
+  - slot_was_set:
+    - requested_slot: random_song
+  - slot_was_set:
+    - random_song: False
+  - slot_was_set:
+    - requested_slot: song_valence
+  - intent: stop
+  - action: utter_ask_continue
+  - intent: response_negative
+  - action: song_suggestion_form
+  - active_loop: song_suggestion_form
+  - slot_was_set:
+    - requested_slot: song_valence
+  - slot_was_set:
+    - song_valence: medium
+  - slot_was_set:
+    - requested_slot: song_energy
+  - slot_was_set:
+    - song_valence: low
+  - slot_was_set:
+    - requested_slot: song_danceability
+  - slot_was_set:
+    - song_valence: all
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_submit
+  - action: action_suggest_song
+  - checkpoint: propose_group_info
+
+
+- story: User interrupts the song suggestion and doesn't want to continue
+  steps:
+  - intent: welcome_greet
+  - action: utter_welcome_greet
+  - intent: request_song_suggestion_form
+  - action: action_set_song_slots
+  - action: song_suggestion_form
+  - active_loop: song_suggestion_form
+  - slot_was_set:
+    - requested_slot: group
+  - slot_was_set:
+    - group: BTS
+  - slot_was_set:
+    - requested_slot: random_song
+  - slot_was_set:
+    - random_song: False
+  - intent: stop
+  - action: utter_ask_continue
+  - or: 
+    - intent: stop
+    - intent: response_positive
+  - action: action_deactivate_loop
+  - active_loop: null
+  - action: utter_suggest_tasks
+  - intent: group_info_debut
+  - slot_was_set:
+    - group: NCT
+  - action: action_fill_info_slots
+  - action: utter_group_info_debut
+  - intent: response_positive
+  - action: utter_suggest_tasks
+  - intent: response_negative
+  - action: utter_general_info_bot
+
+- story: User interrupts the song suggestion because changed their mind
+  steps:
+  - intent: welcome_greet
+  - action: utter_welcome_greet
+  - intent: request_song_suggestion_form
+  - action: action_set_song_slots
+  - action: song_suggestion_form
+  - active_loop: song_suggestion_form
+  - slot_was_set:
+    - requested_slot: group
+  - slot_was_set:
+    - group: BTS
+  - slot_was_set:
+    - requested_slot: random_song
+  - slot_was_set:
+    - random_song: False
+  - intent: stop
+  - action: utter_ask_continue
+  - or: 
+    - intent: stop
+    - intent: response_positive
+  - action: action_deactivate_loop
+  - active_loop: null
+  - action: utter_suggest_tasks
+  - intent: request_song_suggestion_form
+  - action: action_set_song_slots
+  - action: song_suggestion_form
+  - active_loop: song_suggestion_form
+  - slot_was_set:
+    - requested_slot: group
+  - slot_was_set:
+    - group: TXT
+  - slot_was_set:
+    - requested_slot: random_song
+  - slot_was_set:
+    - random_song: True
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_submit
+  - action: action_suggest_song
+  - checkpoint: propose_group_info
+
+- story: Ask for group information
+  steps:
+  - checkpoint: start_ask_group_info
+  - intent: request_group_info_form
+  - action: group_info_form
+  - active_loop: group_info_form
+  - slot_was_set:
+    - requested_slot: group
+  - slot_was_set:
+    - group: BTS
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_fill_info_slots
+  - action: utter_group_info_intro
+  - checkpoint: group_info_1
+
+- story: After song suggestion user asks information 1
+  steps:
+  - checkpoint: propose_group_info
+  - intent: response_positive
+  - action: group_info_form
+  - active_loop: group_info_form
+  - slot_was_set:
+    - group: NCT
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_fill_info_slots
+  - action: utter_group_info_intro
+  - checkpoint: group_info_1
+
+- story: After song suggestion user asks information 2
+  steps:
+  - action: action_suggest_song
+  - intent: response_positive
+  - action: group_info_form
+  - active_loop: group_info_form
+  - slot_was_set:
+    - group: EXO
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_fill_info_slots
+  - action: utter_group_info_intro
+
+- story: Provide any kind of group info
+  steps:
+  - checkpoint: group_info_1
+  - intent: group_info_debut
+  - action: action_fill_info_slots
+  - action: utter_group_info_debut
+  - intent: response_positive
+  - action: utter_suggest_tasks
+  - intent: group_info_unknown
+  - action: utter_group_info_unknown
+  - intent: goodbye
+  - action: utter_ending
+
+- story: After song suggestion indecisive user asks for one information
+  steps:
+  - checkpoint: propose_group_info
+  - intent: response_negative
+  - action: utter_suggest_tasks
+  - intent: group_info_company
+  - slot_was_set:
+    - group: NCT
+  - action: action_fill_info_slots
+  - action: utter_group_info_company
+  - intent: response_positive
+  - action: utter_suggest_tasks
+  - intent: response_negative
+  - action: utter_general_info_bot
+
+- story: After song suggestion user ends conversation by negating
+  steps:
+  - checkpoint: propose_group_info
+  - intent: response_negative
+  - action: utter_suggest_tasks
+  - intent: response_negative
+  - action: utter_general_info_bot
+
+- story: After song suggestion user ends conversation by saying goodbye 1
+  steps:
+  - checkpoint: propose_group_info
+  - intent: response_negative
+  - action: utter_suggest_tasks
+  - intent: goodbye
+  - action: utter_ending
+
+- story: After song suggestion user ends conversation by saying goodbye 2
+  steps:
+  - checkpoint: propose_group_info
+  - intent: goodbye
+  - action: utter_ending
+
+
+
+- story: Request group unknown info
+  steps:
+    - intent: group_info_unknown
+#    - slot_was_set:
+#      - group: NCT
+    - action: utter_group_info_unknown
+
+
+- story: Request group company
+  steps:
+    - intent: group_info_company
+#    - slot_was_set:
+#      - group: BTS
+    - action: action_fill_info_slots
+    - action: utter_group_info_company
+    - intent: response_positive
+    - action: utter_suggest_tasks
+    - checkpoint: more_info_request
+
+
+
+- story: Request group members
+  steps:
+    - intent: group_info_members
+#    - slot_was_set:
+#      - group: TXT
+    - action: action_fill_info_slots
+    - action: utter_group_info_members
+    - intent: response_positive
+    - action: utter_suggest_tasks
+    - checkpoint: more_info_request
+
+
+- story: Request group debut
+  steps:
+    - intent: group_info_debut
+#    - slot_was_set:
+#      - group: Blackpink
+    - action: action_fill_info_slots
+    - action: utter_group_info_debut
+    - intent: response_positive
+    - action: utter_suggest_tasks
+
+
+
+- story: Request group activity 1
+  steps:
+#    - checkpoint: info_activity
+    - intent: group_info_activity
+#    - slot_was_set:
+#      - group: Seventeen
+    - action: action_fill_info_slots
+    - action: utter_group_info_activity
+    - intent: response_positive
+    - action: utter_suggest_tasks
+    - checkpoint: different_group_info
+
+- story: Request group activity 2
+  steps:
+#    - checkpoint: info_activity
+    - intent: group_info_activity
+#    - slot_was_set:
+#      - group: Seventeen
+    - action: action_fill_info_slots
+    - action: utter_group_info_activity
+    - checkpoint: different_group_info
+
+
+- story: Continue requesting info 1
+  steps:
+    - checkpoint: more_info_request
+    - intent: response_negative
+    - action: utter_suggest_tasks
+    - intent: response_negative
+    - action: utter_general_info_bot
+
+- story: Continue requesting info 2
+  steps:
+    - checkpoint: more_info_request
+    - intent: response_negative
+    - action: utter_suggest_tasks
+#    - intent: request_song_suggestion_form
+
+- story: Continue requesting info 3
+  steps:
+    - checkpoint: more_info_request
+    - intent: response_positive
+    - action: action_fill_info_slots
+    - action: utter_group_info_intro
+
+- story: Ask info about different group
+  steps:
+    - checkpoint: different_group_info
+    - intent: request_list_groups
+    - action: utter_list_groups
+#    - intent: request_group_info_form
+
+- story: Request all group info starting from song suggestion 
+  steps:
+    - checkpoint: propose_group_info
+    - intent: response_positive
+    - action: group_info_form
+    - active_loop: group_info_form
+    - slot_was_set:
+      - group: NCT
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: action_fill_info_slots
+    - action: utter_group_info_intro
+    - intent: group_info_general
+    - action: action_fill_info_slots
+    - action: utter_group_info_general
+    - intent: response_positive
+    - action: utter_list_groups
+    - intent: inform_group
+    - action: action_fill_info_slots
+    - action: utter_group_info_intro
+    - intent: group_info_general
+    - action: action_fill_info_slots
+    - action: utter_group_info_general
+    - intent: response_positive
+    - action: utter_list_groups
+    - intent: inform_group
+    - action: action_fill_info_slots
+    - action: utter_group_info_intro
+    - intent: group_info_general
+    - action: action_fill_info_slots
+    - action: utter_group_info_general
+    - intent: response_positive
+    - action: utter_list_groups
+    - intent: inform_group
+    - action: action_fill_info_slots
+    - action: utter_group_info_intro
+
+
+- story: Request some infos and then general info 
+  steps:
+    - intent: group_info_debut
+    - action: action_fill_info_slots
+    - action: utter_group_info_debut
+    - intent: group_info_activity
+    - action: action_fill_info_slots
+    - action: utter_group_info_activity    
+    - intent: group_info_general
+    - slot_was_set:
+      - group: EXO
+    - action: action_fill_info_slots
+    - action: utter_group_info_general
+    - intent: response_negative
+    - action: utter_suggest_tasks
+    - intent: response_negative
+    - action: utter_general_info_bot
+
+- story: interactive_story_1_
+  steps:
+    - intent: welcome_greet
+    - action: utter_welcome_greet
+    - intent: request_song_suggestion_form
+    - action: action_set_song_slots
+    - action: song_suggestion_form
+    - active_loop: song_suggestion_form
+    - slot_was_set:
+      - requested_slot: group
+    - slot_was_set:
+      - group: NCT
+    - slot_was_set:
+      - requested_slot: random_song
+    - intent: request_song_suggestion_form
+    - action: action_set_song_slots
+    - slot_was_set:
+      - random_song: false
+    - slot_was_set:
+      - song_danceability: low
+    - slot_was_set:
+      - song_energy: low
+    - slot_was_set:
+      - song_valence: high
+    - action: song_suggestion_form
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: action_submit
+    - action: action_suggest_song
+    - slot_was_set:
+      - group: NCT
+    - intent: response_positive
+    - action: group_info_form
+    - active_loop: group_info_form
+    - slot_was_set:
+      - group: NCT
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: action_fill_info_slots
+    - action: utter_group_info_intro
+    - intent: group_info_general
+    - action: action_fill_info_slots
+    - action: utter_group_info_general
+    - intent: response_positive
+    - action: utter_list_groups
+    - intent: inform_group
+    - slot_was_set:
+      - group: TXT
+    - action: action_fill_info_slots
+    - action: utter_group_info_intro
+    - intent: group_info_general
+    - action: action_fill_info_slots
+    - action: utter_group_info_general
+    - intent: response_positive
+    - action: utter_list_groups
+    - intent: request_song_suggestion_form
+    - action: action_set_song_slots
+    - slot_was_set:
+      - random_song: null
+    - slot_was_set:
+      - song_danceability: null
+    - slot_was_set:
+      - song_energy: null
+    - slot_was_set:
+      - song_valence: null
+    - action: song_suggestion_form
+    - active_loop: song_suggestion_form
+    - slot_was_set:
+      - group: null
+    - slot_was_set:
+      - requested_slot: group
+    - intent: request_list_groups
+    - action: utter_list_groups
+    - action: song_suggestion_form
+    - intent: group_info_debut
+    - action: action_fill_info_slots
+    - action: utter_group_info_debut
+    - action: song_suggestion_form
+    - slot_was_set:
+      - requested_slot: song_valence
+    - slot_was_set:
+      - song_valence: high
+    - slot_was_set:
+      - requested_slot: song_energy
+    - slot_was_set:
+      - song_energy: low
+    - slot_was_set:
+      - requested_slot: song_danceability
+    - slot_was_set:
+      - song_danceability: high
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: action_submit
+    - action: action_suggest_song
+    - slot_was_set:
+      - group: Blackpink
+    - intent: goodbye
+    - action: utter_ending
+
+- story: interactive_story_2_
+  steps:
+    - intent: welcome_greet
+    - action: utter_welcome_greet
+    - intent: general_info_bot
+    - action: utter_general_info_bot
+    - intent: request_group_info_form
+    - action: group_info_form
+    - active_loop: group_info_form
+    - slot_was_set:
+      - group: null
+    - slot_was_set:
+      - requested_slot: group
+    - slot_was_set:
+      - group: TXT
+    - slot_was_set:
+      - group: TXT
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: action_fill_info_slots
+    - slot_was_set:
+      - group_debut: '2019'
+    - slot_was_set:
+      - group_members: '4'
+    - slot_was_set:
+      - group_company: BigHit
+    - slot_was_set:
+      - group_activity: active
+    - action: utter_group_info_intro
+    - intent: group_info_general
+    - action: action_fill_info_slots
+    - slot_was_set:
+      - group_debut: '2019'
+    - slot_was_set:
+      - group_members: '4'
+    - slot_was_set:
+      - group_company: BigHit
+    - slot_was_set:
+      - group_activity: active
+    - action: utter_group_info_general
+    - intent: response_positive
+    - action: utter_list_groups
+    - intent: inform_group
+    - slot_was_set:
+      - group: Seventeen
+    - action: action_fill_info_slots
+    - slot_was_set:
+      - group_debut: '2015'
+    - slot_was_set:
+      - group_members: '13'
+    - slot_was_set:
+      - group_company: Pledis
+    - slot_was_set:
+      - group_activity: active
+    - action: utter_group_info_intro
+    - intent: group_info_debut
+    - action: action_fill_info_slots
+    - slot_was_set:
+      - group_debut: '2015'
+    - slot_was_set:
+      - group_members: '13'
+    - slot_was_set:
+      - group_company: Pledis
+    - slot_was_set:
+      - group_activity: active
+    - action: utter_group_info_debut
+    - intent: request_song_suggestion_form
+    - action: action_set_song_slots
+    - slot_was_set:
+      - random_song: null
+    - slot_was_set:
+      - song_danceability: null
+    - slot_was_set:
+      - song_energy: null
+    - slot_was_set:
+      - song_valence: high
+    - action: song_suggestion_form
+    - active_loop: song_suggestion_form
+    - slot_was_set:
+      - group: Seventeen
+    - slot_was_set:
+      - song_valence: high
+    - slot_was_set:
+      - requested_slot: random_song
+    - slot_was_set:
+      - random_song: true
+    - slot_was_set:
+      - random_song: true
+    - slot_was_set:
+      - song_valence: high
+    - slot_was_set:
+      - song_energy: all
+    - slot_was_set:
+      - song_danceability: all
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: action_submit
+    - action: action_suggest_song
+    - slot_was_set:
+      - group: Seventeen
+    - intent: goodbye
+    - action: utter_ending
+
+- story: combined info request group_info_debut+group_info_members
+  steps:
+    - intent: group_info_debut+group_info_members
+    - action: action_fill_info_slots
+    - action: utter_group_info_debut
+    - action: utter_group_info_members
+    - intent: response_positive
+    - action: utter_suggest_tasks
+
+- story: combined info request group_info_debut+group_info_company
+  steps:
+    - intent: group_info_debut+group_info_company
+    - action: action_fill_info_slots
+    - action: utter_group_info_debut
+    - action: utter_group_info_company
+    - intent: response_positive
+    - action: utter_suggest_tasks
+
+- story: combined info request group_info_debut+group_info_activity
+  steps:
+    - intent: group_info_debut+group_info_activity
+    - action: action_fill_info_slots
+    - action: utter_group_info_debut
+    - action: utter_group_info_activity
+    - intent: response_positive
+    - action: utter_suggest_tasks
+
+- story: combined info request group_info_debut+group_info_unknown
+  steps:
+    - intent: group_info_debut+group_info_unknown
+    - action: action_fill_info_slots
+    - action: utter_group_info_debut
+    - intent: group_info_unknown
+    - action: utter_group_info_unknown
+
+- story: combined info request group_info_members+group_info_company
+  steps:
+    - intent: group_info_members+group_info_company
+    - action: action_fill_info_slots
+    - action: utter_group_info_members
+    - action: utter_group_info_company
+    - intent: response_positive
+    - action: utter_suggest_tasks
+
+- story: combined info request group_info_members+group_info_activity
+  steps:
+    - intent: group_info_members+group_info_activity
+    - action: action_fill_info_slots
+    - action: utter_group_info_members
+    - action: utter_group_info_activity
+    - intent: response_positive
+    - action: utter_suggest_tasks
+
+- story: combined info request group_info_company+group_info_activity
+  steps:
+    - intent: group_info_company+group_info_activity
+    - action: action_fill_info_slots
+    - action: utter_group_info_company
+    - action: utter_group_info_activity
+    - intent: response_positive
+    - action: utter_suggest_tasks
+
+- story: combined info request group_info_activity+group_info_unknown
+  steps:
+    - intent: group_info_activity+group_info_unknown
+    - action: action_fill_info_slots
+    - action: utter_group_info_activity
+    - intent: group_info_unknown
+    - action: utter_group_info_unknown
+
+- story: combined info request group_info_company+group_info_unknown
+  steps:
+    - intent: group_info_company+group_info_unknown
+    - action: action_fill_info_slots
+    - action: utter_group_info_company
+    - intent: response_positive
+    - action: utter_suggest_tasks
+
+- story: combined info request group_info_members+group_info_unknown
+  steps:
+    - intent: group_info_members+group_info_unknown
+    - action: action_fill_info_slots
+    - action: utter_group_info_members
+    - intent: group_info_unknown
+    - action: utter_group_info_unknown
+
+- story: combined info request group_info_members+group_info_debut+group_info_activity
+  steps:
+    - intent: group_info_members+group_info_debut+group_info_activity
+    - action: action_fill_info_slots
+    - action: utter_group_info_members
+    - action: utter_group_info_debut
+    - action: utter_group_info_activity
+    - intent: response_positive
+    - action: utter_suggest_tasks
+
+- story: combined info request group_info_members+group_info_debut+group_info_company
+  steps:
+    - intent: group_info_members+group_info_debut+group_info_company
+    - action: action_fill_info_slots
+    - action: utter_group_info_members
+    - action: utter_group_info_debut
+    - action: utter_group_info_company
+    - intent: response_positive
+    - action: utter_suggest_tasks
+
+- story: combined info request group_info_activity+group_info_debut+group_info_company
+  steps:
+    - intent: group_info_activity+group_info_debut+group_info_company
+    - action: action_fill_info_slots
+    - action: utter_group_info_activity
+    - action: utter_group_info_debut
+    - action: utter_group_info_company
+    - intent: response_positive
+    - action: utter_suggest_tasks
+
+- story: combined info request group_info_activity+group_info_members+group_info_company
+  steps:
+    - intent: group_info_activity+group_info_members+group_info_company
+    - action: action_fill_info_slots
+    - action: utter_group_info_activity
+    - action: utter_group_info_members
+    - action: utter_group_info_company
+    - intent: response_positive
+    - action: utter_suggest_tasks
+
+- story: interactive_story_3
+  steps:
+    - intent: welcome_greet
+    - action: utter_welcome_greet
+    - intent: general_info_bot
+    - action: utter_general_info_bot
+    - intent: group_info_debut+group_info_unknown
+    - slot_was_set:
+      - group: NCT
+    - action: action_fill_info_slots
+    - slot_was_set:
+      - group_debut: '2016'
+    - slot_was_set:
+      - group_members: '23'
+    - slot_was_set:
+      - group_company: SM
+    - slot_was_set:
+      - group_activity: active
+    - action: utter_group_info_debut
+    - intent: response_positive
+    - action: utter_suggest_tasks
+    - intent: group_info_activity+group_info_members+group_info_company
+    - slot_was_set:
+      - group: EXO
+    - action: action_fill_info_slots
+    - slot_was_set:
+      - group_debut: '2012'
+    - slot_was_set:
+      - group_members: '9'
+    - slot_was_set:
+      - group_company: SM
+    - slot_was_set:
+      - group_activity: active
+    - action: utter_group_info_activity
+    - action: utter_group_info_members
+    - action: utter_group_info_company
+    - intent: request_song_suggestion_form
+    - action: action_set_song_slots
+    - slot_was_set:
+      - random_song: null
+    - slot_was_set:
+      - song_danceability: null
+    - slot_was_set:
+      - song_energy: null
+    - slot_was_set:
+      - song_valence: high
+    - action: song_suggestion_form
+    - active_loop: song_suggestion_form
+    - slot_was_set:
+      - group: EXO
+    - slot_was_set:
+      - song_valence: high
+    - slot_was_set:
+      - requested_slot: random_song
+    - slot_was_set:
+      - random_song: false
+    - slot_was_set:
+      - random_song: false
+    - slot_was_set:
+      - song_valence: high
+    - slot_was_set:
+      - song_energy: null
+    - slot_was_set:
+      - song_danceability: null
+    - slot_was_set:
+      - requested_slot: song_energy
+    - slot_was_set:
+      - song_energy: medium
+    - slot_was_set:
+      - song_energy: medium
+    - slot_was_set:
+      - requested_slot: song_danceability
+    - slot_was_set:
+      - song_danceability: high
+    - slot_was_set:
+      - song_danceability: high
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: action_submit
+    - action: action_suggest_song
+    - slot_was_set:
+      - group: EXO
+    - intent: group_info_general
+    - action: action_fill_info_slots
+    - slot_was_set:
+      - group_debut: '2012'
+    - slot_was_set:
+      - group_members: '9'
+    - slot_was_set:
+      - group_company: SM
+    - slot_was_set:
+      - group_activity: active
+    - action: utter_group_info_general
+    - intent: response_negative
+    - action: utter_suggest_tasks
+    - intent: goodbye
+    - action: utter_ending
+
+
+- story: Ask a lot of Seventeen questions
+  steps:
+  - intent: welcome_greet
+  - action: utter_welcome_greet
+  - intent: group_info_unknown
+  - slot_was_set:
+    - group: Seventeen
+  - action: utter_group_info_unknown
+  - intent: group_info_activity
+  - action: action_fill_info_slots
+  - slot_was_set:
+    - group_debut: '2015'
+  - slot_was_set:
+    - group_members: '13'
+  - slot_was_set:
+    - group_company: Pledis
+  - slot_was_set:
+    - group_activity: active
+  - action: utter_group_info_activity
+  - intent: group_info_debut+group_info_members
+  - action: action_fill_info_slots
+  - slot_was_set:
+    - group_debut: '2015'
+  - slot_was_set:
+    - group_members: '13'
+  - slot_was_set:
+    - group_company: Pledis
+  - slot_was_set:
+    - group_activity: active
+  - action: utter_group_info_debut
+  - action: utter_group_info_members
+  - intent: request_song_suggestion_form
+  - action: action_set_song_slots
+  - slot_was_set:
+    - random_song: null
+  - slot_was_set:
+    - song_danceability: null
+  - slot_was_set:
+    - song_energy: null
+  - slot_was_set:
+    - song_valence: null
+  - action: song_suggestion_form
+  - active_loop: song_suggestion_form
+  - slot_was_set:
+    - group: Seventeen
+  - slot_was_set:
+    - requested_slot: random_song
+  - slot_was_set:
+    - random_song: false
+  - slot_was_set:
+    - random_song: false
+  - slot_was_set:
+    - song_valence: high
+  - slot_was_set:
+    - song_energy: low
+  - slot_was_set:
+    - song_danceability: high
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_submit
+  - action: action_suggest_song
+  - slot_was_set:
+    - group: Seventeen
+  - intent: group_info_company+group_info_unknown
+  - action: action_fill_info_slots
+  - slot_was_set:
+    - group_debut: '2015'
+  - slot_was_set:
+    - group_members: '13'
+  - slot_was_set:
+    - group_company: Pledis
+  - slot_was_set:
+    - group_activity: active
+  - action: utter_group_info_company
+  - intent: group_info_unknown
+  - action: utter_group_info_unknown
+  - intent: group_info_debut+group_info_activity
+  - action: action_fill_info_slots
+  - slot_was_set:
+    - group_debut: '2015'
+  - slot_was_set:
+    - group_members: '13'
+  - slot_was_set:
+    - group_company: Pledis
+  - slot_was_set:
+    - group_activity: active
+  - action: utter_group_info_debut
+  - action: utter_group_info_activity
+  - intent: goodbye
+  - action: utter_ending

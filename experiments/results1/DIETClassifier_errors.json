@@ -1,0 +1,255 @@
+[
+  {
+    "text": "suggest a s.k.z. song. I want it happy, calm and with low danceability",
+    "entities": [
+      {
+        "start": 10,
+        "end": 16,
+        "value": "Stray Kids",
+        "entity": "group"
+      },
+      {
+        "start": 33,
+        "end": 38,
+        "value": "happy",
+        "entity": "song_valence"
+      },
+      {
+        "start": 40,
+        "end": 44,
+        "value": "calm",
+        "entity": "song_energy"
+      },
+      {
+        "start": 54,
+        "end": 70,
+        "value": "low danceability",
+        "entity": "song_danceability"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "song_valence",
+        "start": 33,
+        "end": 38,
+        "confidence_entity": 0.9933727979660034,
+        "value": "high cheerfulness",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "song_energy",
+        "start": 40,
+        "end": 44,
+        "confidence_entity": 0.9980307221412659,
+        "value": "low energy",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "song_danceability",
+        "start": 54,
+        "end": 70,
+        "confidence_entity": 0.9962448477745056,
+        "value": "low danceability",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "suggest a s. k. z. song to me",
+    "entities": [
+      {
+        "start": 10,
+        "end": 18,
+        "value": "Stray Kids",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "suggest a b.t.s. song to me",
+    "entities": [
+      {
+        "start": 10,
+        "end": 16,
+        "value": "BTS",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "suggest a b. t. s. song to me",
+    "entities": [
+      {
+        "start": 10,
+        "end": 18,
+        "value": "BTS",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "suggest a n. c. t. song to me",
+    "entities": [
+      {
+        "start": 10,
+        "end": 18,
+        "value": "NCT",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "suggest a n.c.t. song to me",
+    "entities": [
+      {
+        "start": 10,
+        "end": 16,
+        "value": "NCT",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "suggest a b.p. song to me",
+    "entities": [
+      {
+        "start": 10,
+        "end": 14,
+        "value": "Blackpink",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "suggest a s. v. t. song to me",
+    "entities": [
+      {
+        "start": 10,
+        "end": 18,
+        "value": "Seventeen",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "suggest a t.x.t. song to me",
+    "entities": [
+      {
+        "start": 10,
+        "end": 16,
+        "value": "TXT",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "suggest a t. x. t. song to me",
+    "entities": [
+      {
+        "start": 10,
+        "end": 18,
+        "value": "TXT",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "suggest a e. x. o. song to me",
+    "entities": [
+      {
+        "start": 10,
+        "end": 18,
+        "value": "EXO",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "can you tell me a bit about n.c.t.",
+    "entities": [
+      {
+        "start": 28,
+        "end": 34,
+        "value": "NCT",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "please tell me about s.k.z.",
+    "entities": [
+      {
+        "start": 21,
+        "end": 27,
+        "value": "Stray Kids",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "no thanks but can you tell me a bit about n.c.t.",
+    "entities": [
+      {
+        "start": 42,
+        "end": 48,
+        "value": "NCT",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "can you tell me something about (g)i-dle",
+    "entities": [
+      {
+        "start": 32,
+        "end": 40,
+        "value": "(g)i-dle",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "can you tell me something about big Bang",
+    "entities": [
+      {
+        "start": 32,
+        "end": 41,
+        "value": "big Bang ",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "What is e.x.o. agency please?",
+    "entities": [
+      {
+        "start": 8,
+        "end": 14,
+        "value": "EXO",
+        "entity": "group"
+      }
+    ],
+    "predicted_entities": []
+  }
+]

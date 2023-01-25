@@ -1,0 +1,49 @@
+{
+  "song_energy": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 71,
+    "confused_with": {}
+  },
+  "group": {
+    "precision": 1.0,
+    "recall": 0.8529411764705882,
+    "f1-score": 0.9206349206349206,
+    "support": 204,
+    "confused_with": {}
+  },
+  "song_danceability": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 50,
+    "confused_with": {}
+  },
+  "song_valence": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 80,
+    "confused_with": {}
+  },
+  "micro avg": {
+    "precision": 1.0,
+    "recall": 0.9259259259259259,
+    "f1-score": 0.9615384615384615,
+    "support": 405
+  },
+  "macro avg": {
+    "precision": 1.0,
+    "recall": 0.9632352941176471,
+    "f1-score": 0.9801587301587301,
+    "support": 405
+  },
+  "weighted avg": {
+    "precision": 1.0,
+    "recall": 0.9259259259259259,
+    "f1-score": 0.9600235155790711,
+    "support": 405
+  },
+  "accuracy": 0.9902660609993511
+}
