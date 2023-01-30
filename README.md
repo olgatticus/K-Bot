@@ -1,7 +1,7 @@
 # K-Bot
 
 ### About
-K-Bot is an assistant that can help any user find a K-Pop songs that align with their taste, and/or retrieve useful and interesting information about various K-Pop groups.
+K-Bot is an assistant that can help any user find K-Pop songs that align with their taste, and/or retrieve useful and interesting information about various K-Pop groups.
 
 This chatbot was built using [Rasa](https://rasa.com/docs/getting-started/), with the final goal of deploying it as an Amazon Alexa Skill.
 
